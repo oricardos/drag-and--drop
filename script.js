@@ -2,7 +2,7 @@ function log(message) {
     console.log(message)
 }
 
-const cards = document.querySelectorAll('.card-elements');
+const cards = document.querySelectorAll('.card-element');
 const dropzones = document.querySelectorAll('[class^="dropzone-"]');
 
 cards.forEach(card => {

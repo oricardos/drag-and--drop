@@ -17,6 +17,10 @@ body {
     margin-right: 16px;
 }
 
+.btn-add {
+    cursor: pointer;
+}
+
 .container-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -75,19 +79,11 @@ body {
     border: solid 10px #808080;
 }
 
-.card-elements {
-    display: flex;
-    padding: 16px;
-    background-color: #fcfcfc;
-    border-radius: 4px;
-    width: 100%;
-    margin: 25px 0;
-    font-weight: 600;
-    font-size: 18px;
+.card-element {
     transition: 400ms;
 }
 
-.card-elements:hover {
+.card-element:hover {
     cursor: url(https://ssl.gstatic.com/ui/v1/icons/mail/images/2/openhand.cur), default !important;
     border-radius: 4px;
     background: #f3f3f3;
@@ -98,7 +94,7 @@ body {
     background-color: #BBB9D133;
 }
 
-.card-elements, .dropzone {
+.card-element, .dropzone {
     transition: 400ms;
 }
 
