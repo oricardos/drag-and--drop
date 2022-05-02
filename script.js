@@ -2,8 +2,8 @@ function log(message) {
     console.log(message)
 }
 
-const cards = document.querySelectorAll('.card')
-const dropzones = document.querySelectorAll('.dropzone')
+const cards = document.querySelectorAll('.card-elements');
+const dropzones = document.querySelectorAll('[class^="dropzone-"]');
 
 cards.forEach(card => {
     card.addEventListener('dragstart', dragstart)
@@ -13,7 +13,7 @@ cards.forEach(card => {
 
 function dragstart() {
     dropzones.forEach ( dropzone => dropzone.classList.add('highlight'))
-    
+
     this.classList.add('is-dragging')
 }
 

@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <title>Simple Kanban Board</title>
-    </head>
-    <body>
-        <div class="boards">
-            <div class="board">
-                <h3>Todo</h3>
-                <div class="dropzone">
-                    <div class="card" draggable="true">
-                        <div class="status todo"></div>
-                        <div class="content">React JS</div>
-                    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <title>Beacons</title>
+</head>
+<body>
+<div class="container-grid">
+    <div class="main-grid">
+        <div class="board">
+            <h2>Elementos</h2>
+            <div class="dropzone-elements">
+                <div class="card-elements" draggable="true">
+                    <ion-icon name="ellipsis-vertical-outline" class="mr-1"></ion-icon>
+                    <div class="cont ent">Header</div>
                 </div>
-            </div>
+                <div class="card-elements" draggable="true">
+                    <ion-icon name="ellipsis-vertical-outline" class="mr-1"></ion-icon>
+                    <div class="cont ent">Foto de Perfil</div>
+                </div>
+                <div class="card-elements" draggable="true">
+                    <ion-icon name="ellipsis-vertical-outline" class="mr-1"></ion-icon>
+                    <div class="cont ent">Redes Sociais</div>
+                </div>
 
-            <div class="board">
-                <h3>In Progress</h3>
-                <div class="dropzone">
-                    <div class="card" draggable="true">
-                        <div class="status inProgress"></div>
-                        <div class="content">Node.js</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="board">
-                <h3>Done</h3>
-                <div class="dropzone">
-                    <div class="card" draggable="true">
-                        <div class="status done"></div>
-                        <div class="content">React Native</div>
-                    </div>
-                </div>
             </div>
         </div>
+    </div>
+    <div class="result-grid">
+        <div class="dropzone-result">
+        </div>
+    </div>
+</div>
 
-        <script src="script.js" defer></script>
-    </body>
+<script src="script.js" defer></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
 </html>

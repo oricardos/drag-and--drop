@@ -1,12 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 html {
     font-family: 'Nunito', sans-serif;
 }
 
 body {
-    background-color: #242E4C;
-    color: #EBEBF2;
+    background-color: #232323;
+    color: #151515;
+}
+
+.mr-1 {
+    margin-right: 16px;
+}
+
+.container-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+    'main result';
+    height: 100vh;
+}
+
+.main-grid{
+    grid-area: main;
+    padding: 20px;
+    background-color: #232323;
+    border-right-color: #adadad;
+    border-right-style: solid;
+    border-right-width: 1px;
+}
+
+.result-grid {
+    grid-area: result;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #232323;
 }
 
 .boards {
@@ -16,76 +50,60 @@ body {
 }
 
 .board {
-    background-color: #161F3B;
-    border: solid 1px #161F3B;
+    padding: 16px;
+    background-color: #f6f6f6;
+    border: solid 1px #151515;
     border-radius: 4px;
     margin: 0 16px;
 }
 
+.dropzone-elements {
+    min-height: 60px;
+}
+
 .board h3 {
-    padding: 16px;
     margin: 0;
-    color: #EBEBF2cc;
+    color: #151515;
 }
 
-.dropzone {
+.dropzone-result {
+    border-radius: 41px;
+    height: 629px;
+    width: 300px;
     padding: 16px;
-    background: #242E4C;
-    min-width: 282px;
-    min-height: 200px;
+    background: #fcfcfc;
+    border: solid 10px #808080;
 }
 
-.card {
+.card-elements {
+    display: flex;
     padding: 16px;
-    border: solid 1px #2d3a60;
-    background: #2d3a60;
+    background-color: #fcfcfc;
     border-radius: 4px;
-    width: 250px;
+    width: 100%;
     margin: 25px 0;
     font-weight: 600;
     font-size: 18px;
     transition: 400ms;
 }
 
-.card:hover {
-    cursor: hand;
-    border: solid 1px #242E4C;
+.card-elements:hover {
+    cursor: url(https://ssl.gstatic.com/ui/v1/icons/mail/images/2/openhand.cur), default !important;
     border-radius: 4px;
-    background: #242E4C;
-    box-shadow:  -10px -10px 20px #1b2238, 
-                10px 10px 20px #2d3a60;
-}
-
-.card .status {
-    width: 30px;
-    height: 8px;
-    background: gray;
-    margin-bottom: 16px;
-    border-radius: 8px;
-}
-
-.status.todo {
-    background-color: #81CEA5;
-}
-
-.status.inProgress {
-    background: #598CDF;
-}
-
-.status.done {
-    background-color: #cc3333;
+    background: #f3f3f3;
+    box-shadow:  0 20px 40px -8px rgba(173, 173, 173, 0.25);
 }
 
 .highlight {
     background-color: #BBB9D133;
 }
 
-.card, .dropzone {
+.card-elements, .dropzone {
     transition: 400ms;
 }
 
 .is-dragging{
-    cursor: pointer;
+    cursor: grabbing;
     opacity: 0.3;
 }
 
