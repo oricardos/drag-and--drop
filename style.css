@@ -25,6 +25,10 @@ body {
     margin-right: 16px;
 }
 
+.drag-n-drop:hover {
+    cursor: url(https://ssl.gstatic.com/ui/v1/icons/mail/images/2/openhand.cur), default !important;
+}
+
 .btn-add {
     cursor: pointer;
 }
@@ -48,10 +52,6 @@ body {
 
 .result-grid {
     grid-area: result;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
     background-color: #232323;
 }
 
@@ -92,7 +92,6 @@ body {
 }
 
 .card-element:hover {
-    cursor: url(https://ssl.gstatic.com/ui/v1/icons/mail/images/2/openhand.cur), default !important;
     border-radius: 4px;
     background: #f3f3f3;
     box-shadow:  0 20px 40px -8px rgba(173, 173, 173, 0.25);

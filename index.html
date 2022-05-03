@@ -19,37 +19,40 @@
 
 
             <div class="dropzone-elements">
+                <!-- HEADER -->
                 <div class="card-element mb-3" draggable="true">
                     <div class="accordion" id="accordionHeader">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOne">
                                 <button
-                                    class="accordion-button"
-                                    type="button"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#collapseOne"
-                                    aria-expanded="true"
-                                    aria-controls="collapseOne"
+                                        class="accordion-button"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne"
+                                        aria-expanded="true"
+                                        aria-controls="collapseOne"
                                 >
-                                    <ion-icon name="ellipsis-vertical-outline" class="mr-1"></ion-icon>
+                                    <ion-icon name="ellipsis-vertical-outline" class="mr-1 drag-n-drop"></ion-icon>
                                     Header
                                 </button>
                             </h2>
                             <div
-                                id="collapseOne"
-                                class="accordion-collapse collapse"
-                                aria-labelledby="headingOne"
-                                data-bs-parent="#accordionHeader"
+                                    id="collapseOne"
+                                    class="accordion-collapse collapse show"
+                                    aria-labelledby="headingOne"
+                                    data-bs-parent="#accordionHeader"
                             >
                                 <div class="accordion-body px-5">
-                                    <div class="d-flex justify-between align-items-center my-4" data-element="profile-photo">
+                                    <div class="d-flex justify-between align-items-center my-4"
+                                         data-element="profile-photo">
                                         <div class="d-flex w-100 align-items-center">
                                             <span>Foto de Perfil</span>
                                         </div>
                                         <ion-icon class="btn-add" id="header" name="add-circle-outline"
                                                   size="large"></ion-icon>
                                     </div>
-                                    <div class="d-flex justify-between align-items-center my-4" data-element="user-name">
+                                    <div class="d-flex justify-between align-items-center my-4"
+                                         data-element="user-name">
                                         <div class="d-flex w-100 align-items-center">
                                             <span>User Name</span>
                                         </div>
@@ -62,27 +65,28 @@
                     </div>
                 </div>
 
+                <!-- TEXT -->
                 <div class="card-element mb-3" draggable="true">
                     <div class="accordion" id="accordionText">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="textOne">
                                 <button
-                                    class="accordion-button"
-                                    type="button"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#collapseText"
-                                    aria-expanded="true"
-                                    aria-controls="collapseText"
+                                        class="accordion-button"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#collapseText"
+                                        aria-expanded="true"
+                                        aria-controls="collapseText"
                                 >
-                                    <ion-icon name="ellipsis-vertical-outline" class="mr-1"></ion-icon>
-                                    Texto
+                                    <ion-icon name="ellipsis-vertical-outline" class="mr-1 drag-n-drop"></ion-icon>
+                                    Text
                                 </button>
                             </h2>
                             <div
-                                id="collapseText"
-                                class="accordion-collapse collapse"
-                                aria-labelledby="textOne"
-                                data-bs-parent="#accordionText"
+                                    id="collapseText"
+                                    class="accordion-collapse collapse"
+                                    aria-labelledby="textOne"
+                                    data-bs-parent="#accordionText"
                             >
                                 <div class="accordion-body px-5">
                                     <div class="d-flex justify-between align-items-center my-4" data-element="bio">
@@ -98,6 +102,208 @@
                     </div>
                 </div>
 
+                <!-- LINKS -->
+                <div class="card-element mb-3" draggable="true">
+                    <div class="accordion" id="accordionEmail">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="email">
+                                <button
+                                        class="accordion-button"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#collapseEmail"
+                                        aria-expanded="true"
+                                        aria-controls="collapseEmail"
+                                >
+                                    <ion-icon name="ellipsis-vertical-outline" class="mr-1 drag-n-drop"></ion-icon>
+                                    Email
+                                </button>
+                            </h2>
+                            <div
+                                    id="collapseEmail"
+                                    class="accordion-collapse collapse"
+                                    aria-labelledby="email"
+                                    data-bs-parent="#accordionEmail"
+                            >
+                                <div class="accordion-body px-5">
+                                    <div class="d-flex justify-between align-items-center my-4" data-element="bio">
+                                        <div class="w-100">
+                                            <span>Email</span>
+                                            <label>
+                                                <input type="text">
+                                            </label>
+                                        </div>
+                                        <ion-icon class="btn-add" id="header" name="add-circle-outline"
+                                                  size="large"></ion-icon>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EMAIL-->
+                <div class="card-element mb-3" draggable="true">
+                    <div class="accordion" id="accordionLinks">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="links">
+                                <button
+                                        class="accordion-button"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#collapseLinks"
+                                        aria-expanded="true"
+                                        aria-controls="collapseLinks"
+                                >
+                                    <ion-icon name="ellipsis-vertical-outline" class="mr-1 drag-n-drop"></ion-icon>
+                                    Links
+                                </button>
+                            </h2>
+                            <div
+                                    id="collapseLinks"
+                                    class="accordion-collapse collapse"
+                                    aria-labelledby="links"
+                                    data-bs-parent="#accordionLinks"
+                            >
+                                <div class="accordion-body px-5">
+                                    <div class="d-flex justify-between align-items-center my-4" data-element="bio">
+                                        <div class="w-100">
+                                            <span>Links</span>
+                                            <label>
+                                                <input type="text">
+                                            </label>
+                                        </div>
+                                        <ion-icon class="btn-add" id="header" name="add-circle-outline"
+                                                  size="large"></ion-icon>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TWEET -->
+                <div class="card-element mb-3" draggable="true">
+                    <div class="accordion" id="accordionTweets">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="tweet">
+                                <button
+                                        class="accordion-button"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTweet"
+                                        aria-expanded="true"
+                                        aria-controls="collapseTweet"
+                                >
+                                    <ion-icon name="ellipsis-vertical-outline" class="mr-1 drag-n-drop"></ion-icon>
+                                    Links
+                                </button>
+                            </h2>
+                            <div
+                                    id="collapseTweet"
+                                    class="accordion-collapse collapse"
+                                    aria-labelledby="tweet"
+                                    data-bs-parent="#accordionTweets"
+                            >
+                                <div class="accordion-body px-5">
+                                    <div class="d-flex justify-between align-items-center my-4" data-element="bio">
+                                        <div class="w-100">
+                                            <span>Links</span>
+                                            <label>
+                                                <input type="text">
+                                            </label>
+                                        </div>
+                                        <ion-icon class="btn-add" id="header" name="add-circle-outline"
+                                                  size="large"></ion-icon>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VIDEO -->
+                <div class="card-element mb-3" draggable="true">
+                    <div class="accordion" id="accordionVideo">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="video">
+                                <button
+                                        class="accordion-button"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#collapseVideo"
+                                        aria-expanded="true"
+                                        aria-controls="collapseVideo"
+                                >
+                                    <ion-icon name="ellipsis-vertical-outline" class="mr-1 drag-n-drop"></ion-icon>
+                                    Links
+                                </button>
+                            </h2>
+                            <div
+                                    id="collapseVideo"
+                                    class="accordion-collapse collapse"
+                                    aria-labelledby="video"
+                                    data-bs-parent="#accordionVideo"
+                            >
+                                <div class="accordion-body px-5">
+                                    <div class="d-flex justify-between align-items-center my-4" data-element="bio">
+                                        <div class="w-100">
+                                            <span>Links</span>
+                                            <label>
+                                                <input type="text">
+                                            </label>
+                                        </div>
+                                        <ion-icon class="btn-add" id="header" name="add-circle-outline"
+                                                  size="large"></ion-icon>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MUSIC-->
+                <div class="card-element mb-3" draggable="true">
+                    <div class="accordion" id="accordionMusic">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="music">
+                                <button
+                                        class="accordion-button"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#collapseMusic"
+                                        aria-expanded="true"
+                                        aria-controls="collapseMusic"
+                                >
+                                    <ion-icon name="ellipsis-vertical-outline" class="mr-1 drag-n-drop"></ion-icon>
+                                    Links
+                                </button>
+                            </h2>
+                            <div
+                                    id="collapseMusic"
+                                    class="accordion-collapse collapse"
+                                    aria-labelledby="music"
+                                    data-bs-parent="#accordionMusic"
+                            >
+                                <div class="accordion-body px-5">
+                                    <div class="d-flex justify-between align-items-center my-4" data-element="bio">
+                                        <div class="w-100">
+                                            <span>Links</span>
+                                            <label>
+                                                <input type="text">
+                                            </label>
+                                        </div>
+                                        <ion-icon class="btn-add" id="header" name="add-circle-outline"
+                                                  size="large"></ion-icon>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
                 <!--                <div class="card-element d-flex justify-between align-items-center" draggable="true">-->
                 <!--                    <div class="d-flex w-100 align-items-center">-->
                 <!--                        <ion-icon name="ellipsis-vertical-outline" class="mr-1"></ion-icon>-->
@@ -108,8 +314,12 @@
             </div>
         </div>
     </div>
-    <div class="result-grid">
-        <div class="dropzone-result">
+    <div class="result-grid pt-5">
+        <div class="sticky-top">
+            <div class="h-100 pt-5 d-flex justify-content-center align-items-center">
+                <div class="dropzone-result mt-5">
+                </div>
+            </div>
         </div>
     </div>
 </div>
