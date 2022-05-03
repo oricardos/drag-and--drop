@@ -7,18 +7,45 @@ const dropzones = document.querySelectorAll('[class^="dropzone-"]');
 const elements = document.querySelectorAll('.btn-add');
 const result = document.querySelector('.dropzone-result');
 
-function createEl(el){
-    const div = document.createElement('div');
-    div.classList.add(el);
-    result.appendChild(div);
+function createSectionEl(section, el) {
+    const divSection = document.createElement('div');
+    const divEl = document.createElement('div');
+
+    divSection.classList.add(`beacons-${section}`);
+    divEl.classList.add(el);
+
+    //CRIANDO ELEMENTO TEXT BIO
+    if (divSection.classList == 'beacons-section-text') {
+        const text = document.createElement('p');
+        text.classList.add('text-bio');
+        text.innerHTML = 'Bio!';
+        divEl.appendChild(text);
+    }
+
+    //CRIANDO ELEMENTOS LINKS
+    if (divSection.classList == 'beacons-section-links') {
+        const linkValue = document.getElementById('beacons-links').value;
+        if (linkValue !== '') {
+            const link = document.createElement('a');
+            link.setAttribute('href', linkValue);
+            link.setAttribute('target', '_blank');
+            link.innerHTML = linkValue;
+            divEl.appendChild(link);
+        }
+    }
+    console.log(divSection)
+
+    divSection.appendChild(divEl);
+
+    return result.appendChild(divSection);
 }
 
 elements.forEach(element => {
-    element.addEventListener('click', function (evt){
+    element.addEventListener('click', function (evt) {
         const el = evt.target.parentElement;
+        const section = evt.target.parentElement.parentElement.classList[1];
         const dataEl = el.getAttribute('data-element');
-        createEl(dataEl);
-        console.log(dataEl)
+        createSectionEl(section, dataEl);
     })
 })
 
@@ -29,7 +56,7 @@ cards.forEach(card => {
 })
 
 function dragstart() {
-    dropzones.forEach ( dropzone => dropzone.classList.add('highlight'))
+    dropzones.forEach(dropzone => dropzone.classList.add('highlight'))
     this.classList.add('is-dragging')
 }
 
@@ -38,7 +65,7 @@ function drag() {
 }
 
 function dragend() {
-    dropzones.forEach ( dropzone => dropzone.classList.remove('highlight'))
+    dropzones.forEach(dropzone => dropzone.classList.remove('highlight'))
     this.classList.remove('is-dragging')
 
 }

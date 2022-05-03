@@ -1,0 +1,9 @@
+.beacons-section-header {
+    display: flex;
+}
+
+.beacons-section-links {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
