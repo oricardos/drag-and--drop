@@ -8,7 +8,7 @@ import createText from './createText.js';
 export default function createSectionEl(section, el) {
   const divSection = document.createElement('div');
   const divEl = document.createElement('div');
-  const result = document.querySelector('.dropzone-result');
+  const preview = document.querySelector('.dropzone-preview');
 
   divSection.classList.add(`beacons-${section}`);
   divEl.classList.add(el);
@@ -47,5 +47,5 @@ export default function createSectionEl(section, el) {
 
   divSection.appendChild(divEl);
 
-  return result.appendChild(divSection);
+  return preview.appendChild(divSection);
 }
