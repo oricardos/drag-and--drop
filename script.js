@@ -1,4 +1,4 @@
-import createSectionEl from './modules/creaseSectionEl.js';
+import createSectionEl from './modules/createSectionEl.js';
 
 function log(message) {
   console.log(message);

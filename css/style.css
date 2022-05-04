@@ -80,14 +80,45 @@ body {
     color: #151515;
 }
 
+.border-result {
+    border: solid 10px red;
+    height: 629px;
+    width: 300px;
+    border-radius: 41px;
+    z-index: 1000;
+}
+
 .dropzone-result {
     border-radius: 41px;
     height: 629px;
     width: 300px;
     padding: 16px;
     background: #fcfcfc;
-    border: solid 10px #808080;
+    /* border: solid 10px #808080; */
+    overflow-x:hidden;
+    overflow-y:auto;
 }
+
+/* width */
+.dropzone-result::-webkit-scrollbar {
+    width: 10px;
+    z-index: 1;
+  }
+  
+  /* Track */
+  .dropzone-result::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  .dropzone-result::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  .dropzone-result::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 
 .card-element {
     transition: 400ms;

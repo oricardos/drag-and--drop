@@ -1,6 +1,9 @@
 import createLink from './createLink.js';
 import createEmail from './createEmail.js';
 import createTweet from './createTweet.js';
+import createYouTube from './createYouTube.js';
+import createMusic from './createMusic.js';
+import createText from './createText.js';
 
 export default function createSectionEl(section, el) {
   const divSection = document.createElement('div');
@@ -12,10 +15,7 @@ export default function createSectionEl(section, el) {
 
   //CRIANDO ELEMENTO TEXT BIO
   if (divSection.classList == 'beacons-section-text') {
-    const text = document.createElement('p');
-    text.classList.add('text-bio');
-    text.innerHTML = 'Bio!';
-    divEl.appendChild(text);
+    createText(divEl);
   }
 
   //CRIANDO ELEMENTOS LINKS
@@ -33,7 +33,17 @@ export default function createSectionEl(section, el) {
     createTweet(divEl);
   }
 
-  console.log(divSection);
+  //CRIANDO ELEMENTOS DE YOUTUBE EMBED
+  if (divSection.classList == 'beacons-section-video') {
+    createYouTube(divEl);
+  }
+
+  //CRIANDO ELEMENTOS DE YOUTUBE EMBED
+  if (divSection.classList == 'beacons-section-music') {
+    createMusic(divEl);
+  }
+
+  // console.log(divSection);
 
   divSection.appendChild(divEl);
 
