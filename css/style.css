@@ -13,14 +13,6 @@ body {
     color: #151515;
 }
 
-.profile-photo {
-    width: 100px;
-    height: 100px;
-    background-color: aqua;
-    border-radius: 50%;
-    transition: all 0.3s ease-in-out;
-}
-
 .mr-1 {
     margin-right: 16px;
 }

@@ -1,3 +1,4 @@
+import createProfilePhoto from './createProfilePhoto.js';
 import createLink from './createLink.js';
 import createEmail from './createEmail.js';
 import createTweet from './createTweet.js';
@@ -12,6 +13,11 @@ export default function createSectionEl(section, el) {
 
   divSection.classList.add(`beacons-${section}`);
   divEl.classList.add(el);
+
+  //CRIANDO ELEMENTO FOTO DE PERFIL
+  if (divSection.classList == 'beacons-section-header') {
+    createProfilePhoto(divEl);
+  }
 
   //CRIANDO ELEMENTO TEXT BIO
   if (divSection.classList == 'beacons-section-text') {
@@ -43,7 +49,7 @@ export default function createSectionEl(section, el) {
     createMusic(divEl);
   }
 
-  // console.log(divSection);
+  console.log(divSection);
 
   divSection.appendChild(divEl);
 
