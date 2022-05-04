@@ -1,5 +1,6 @@
 import createLink from './createLink.js';
 import createEmail from './createEmail.js';
+import createTweet from './createTweet.js';
 
 export default function createSectionEl(section, el) {
   const divSection = document.createElement('div');
@@ -25,6 +26,11 @@ export default function createSectionEl(section, el) {
   //CRIANDO ELEMENTOS EMAIL
   if (divSection.classList == 'beacons-section-email') {
     createEmail(divEl);
+  }
+
+  //CRIANDO ELEMENTOS TWEET
+  if (divSection.classList == 'beacons-section-tweet') {
+    createTweet(divEl);
   }
 
   console.log(divSection);
