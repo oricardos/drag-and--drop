@@ -26,15 +26,15 @@
                                 <h2 class="accordion-header" id="header">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHeader" aria-expanded="true" aria-controls="collapseHeader">
                                         <ion-icon name="ellipsis-vertical-outline" class="mr-1 drag-n-drop"></ion-icon>
-                                        Header
+                                        <h5 class="fw-bold">Header</h5>
                                     </button>
                                 </h2>
                                 <div id="collapseHeader" class="accordion-collapse collapse show" aria-labelledby="header" data-bs-parent="#accordionElements">
                                     <div class="accordion-body section-header">
                                         <div class="d-flex justify-between align-items-center my-4" data-element="profile-photo">
-                                            <div class="d-flex w-100 align-items-center">
-                                                <span>Foto de Perfil</span>
-                                                <input type="file" name="profile-photo" id="beacons-profile-photo">
+                                            <div class="w-100 align-items-center">
+                                                <label for="beacons-profile-photo" class="form-label">Foto de Perfil</label>
+                                                <input class="form-control" type="file" id="beacons-profile-photo">
                                             </div>
                                             <ion-icon class="btn-add" name="add-circle-outline" size="large"></ion-icon>
                                         </div>
@@ -55,17 +55,15 @@
                                 <h2 class="accordion-header" id="text">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseText" aria-expanded="false" aria-controls="collapseText">
                                         <ion-icon name="ellipsis-vertical-outline" class="mr-1 drag-n-drop"></ion-icon>
-                                        Text
+                                        <h5 class="fw-bold">Texto</h5>
                                     </button>
                                 </h2>
                                 <div id="collapseText" class="accordion-collapse collapse" aria-labelledby="text" data-bs-parent="#accordionExample">
                                     <div class="accordion-body section-text">
                                         <div class="d-flex justify-between align-items-center my-4" data-element="bio">
-                                            <div class="d-flex w-100 align-items-center">
-                                                <span>Bio</span>
-                                                <label>
-                                                    <input type="text" id="beacons-bio">
-                                                </label>
+                                            <div class="w-100 align-items-center">
+                                                <label for="beacons-bio" class="form-label">Bio</label>
+                                                <textarea class="form-control" rows="5" id="beacons-bio"></textarea>
                                             </div>
                                             <ion-icon class="btn-add" name="add-circle-outline" size="large"></ion-icon>
                                         </div>
@@ -80,18 +78,23 @@
                                 <h2 class="accordion-header" id="links">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionLinks" aria-expanded="false" aria-controls="accordionLinks">
                                         <ion-icon name="ellipsis-vertical-outline" class="mr-1 drag-n-drop"></ion-icon>
-                                        Links
+                                        <h5 class="fw-bold">Links</h5>
                                     </button>
                                 </h2>
                                 <div id="accordionLinks" class="accordion-collapse collapse" aria-labelledby="links" data-bs-parent="#accordionExample">
                                     <div class="accordion-body section-links">
-                                        <div class="d-flex justify-between align-items-center my-4" data-element="links">
-                                            <div class="w-100">
-                                                <span>Links</span>
-                                                <label>
-                                                    <input type="text" id="beacons-links">
-                                                </label>
+                                        <div class="d-flex justify-content-between align-items-center my-4" data-element="links">
+                                            <div>
+                                                <div class="w-100 mb-3">
+                                                    <label for="beacons-link-name" class="d-block">Nome do Link</label>
+                                                    <input class="form-control" type="text" id="beacons-link-name">
+                                                </div>
+                                                <div class="w-100">
+                                                    <label for="beacons-link-value" class="d-block">Link</label>
+                                                    <input class="form-control" type="text" id="beacons-link-value">
+                                                </div>
                                             </div>
+                                            
                                             <ion-icon class="btn-add" name="add-circle-outline" size="large"></ion-icon>
                                         </div>
                                     </div>
@@ -105,16 +108,16 @@
                                 <h2 class="accordion-header" id="email">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionEmail" aria-expanded="false" aria-controls="accordionEmail">
                                         <ion-icon name="ellipsis-vertical-outline" class="mr-1 drag-n-drop"></ion-icon>
-                                        Email
+                                        <h5 class="fw-bold">Email</h5>
                                     </button>
                                 </h2>
                                 <div id="accordionEmail" class="accordion-collapse collapse" aria-labelledby="email" data-bs-parent="#accordionExample">
                                     <div class="accordion-body section-email">
                                         <div class="d-flex justify-between align-items-center my-4" data-element="email">
                                             <div class="w-100">
-                                                <span>Email</span>
                                                 <label>
-                                                    <input type="email" id="beacons-email">
+                                                    <span class="d-block">Email</span>
+                                                    <input class="form-control" type="email" id="beacons-email">
                                                 </label>
                                             </div>
                                             <ion-icon class="btn-add" name="add-circle-outline" size="large"></ion-icon>
@@ -130,16 +133,16 @@
                                 <h2 class="accordion-header" id="tweet">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionTweet" aria-expanded="false" aria-controls="accordionTweet">
                                         <ion-icon name="ellipsis-vertical-outline" class="mr-1 drag-n-drop"></ion-icon>
-                                        Tweet
+                                        <h5 class="fw-bold">Tweet</h5>
                                     </button>
                                 </h2>
                                 <div id="accordionTweet" class="accordion-collapse collapse" aria-labelledby="tweet" data-bs-parent="#accordionExample">
                                     <div class="accordion-body section-tweet">
                                         <div class="d-flex justify-between align-items-center my-4" data-element="tweet">
                                             <div class="w-100">
-                                                <span>tweet</span>
                                                 <label>
-                                                    <input type="text" id="beacons-tweet">
+                                                    <span class="d-block">Tweet</span>
+                                                    <input class="form-control" type="text" id="beacons-tweet">
                                                 </label>
                                             </div>
                                             <ion-icon class="btn-add" name="add-circle-outline" size="large"></ion-icon>
@@ -155,16 +158,16 @@
                                 <h2 class="accordion-header" id="video">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionVideo" aria-expanded="false" aria-controls="accordionVideo">
                                         <ion-icon name="ellipsis-vertical-outline" class="mr-1 drag-n-drop"></ion-icon>
-                                        Video
+                                        <h5 class="fw-bold">Vídeo</h5>
                                     </button>
                                 </h2>
                                 <div id="accordionVideo" class="accordion-collapse collapse" aria-labelledby="video" data-bs-parent="#accordionExample">
                                     <div class="accordion-body section-video">
                                         <div class="d-flex justify-between align-items-center my-4" data-element="video">
                                             <div class="w-100">
-                                                <span>video</span>
                                                 <label>
-                                                    <input type="text" id="beacons-video">
+                                                    <span class="d-block">Video</span>
+                                                    <input class="form-control" type="text" id="beacons-video">
                                                 </label>
                                             </div>
                                             <ion-icon class="btn-add" name="add-circle-outline" size="large"></ion-icon>
@@ -180,16 +183,16 @@
                                 <h2 class="accordion-header" id="music">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionMusic" aria-expanded="false" aria-controls="accordionMusic">
                                         <ion-icon name="ellipsis-vertical-outline" class="mr-1 drag-n-drop"></ion-icon>
-                                        Music
+                                        <h5 class="fw-bold">Spotify</h5>
                                     </button>
                                 </h2>
                                 <div id="accordionMusic" class="accordion-collapse collapse" aria-labelledby="music" data-bs-parent="#accordionExample">
                                     <div class="accordion-body section-music">
                                         <div class="d-flex justify-between align-items-center my-4" data-element="music">
                                             <div class="w-100">
-                                                <span>music</span>
                                                 <label>
-                                                    <input type="text" id="beacons-music">
+                                                    <span class="d-block mb-3">Spotify</span>
+                                                    <input class="form-control" type="text" id="beacons-music">
                                                 </label>
                                             </div>
                                             <ion-icon class="btn-add" name="add-circle-outline" size="large"></ion-icon>
@@ -202,9 +205,10 @@
                 </div>
             </div>
         </div>
-        <div class="preview-grid pt-5">
+        <!-- PREVIEW -->
+        <div class="preview-grid">
             <div class="sticky-top">
-                <div class="h-100 pt-5 d-flex justify-content-center align-items-center">
+                <div class="h-100 d-flex justify-content-center align-items-center">
                     <div class="border-preview mt-5">
                         <div class="dropzone-preview ">
                         </div>
