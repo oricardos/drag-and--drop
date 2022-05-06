@@ -17,12 +17,11 @@ input[type=file],
 textarea {
     width: 500px;
     max-width: 90%;
-    border: solid 1px red;
+    border: solid 1px #0a0a0a;
 }
 
 input[type=text], input[type=email] {
     height: 40px;
-    /* border: 1px solid #ccc; */
     border-radius: 5px;
     padding: 0 15px;
     font-size: 14px;
