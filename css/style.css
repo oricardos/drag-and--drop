@@ -11,17 +11,18 @@ h5 {
     margin-bottom: 0!important;
 }
 
-textarea{
-    resize: none;
+input[type=text], 
+input[type=email], 
+input[type=file],
+textarea {
     width: 500px;
     max-width: 90%;
+    border: solid 1px red;
 }
 
 input[type=text], input[type=email] {
     height: 40px;
-    width: 500px;
-    max-width: 90%;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     border-radius: 5px;
     padding: 0 15px;
     font-size: 14px;
@@ -105,19 +106,6 @@ body {
     border: solid 10px #808080;
     overflow-x:hidden;
     overflow-y:auto;
-}
-
-.dropzone-preview:before {
-    content: '';
-    position: absolute;
-    top: 8.5%;
-    right: 33%;
-    width: 180px;
-    height: 20px;
-    background-color: #070707;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-
 }
 
 /* width */
