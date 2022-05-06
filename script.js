@@ -1,4 +1,7 @@
-import createSectionEl from './modules/createSectionEl.js';
+import createSectionEl from './modules/create/createSectionEl.js';
+import cookie from './modules/cookie.js';
+
+cookie();
 
 function log(message) {
   console.log(message);

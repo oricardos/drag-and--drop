@@ -85,13 +85,13 @@
                                     <div class="accordion-body section-links">
                                         <div class="d-flex justify-content-between align-items-center my-4" data-element="links">
                                             <div>
-                                                <div class="w-100 mb-3">
-                                                    <label for="beacons-link-name" class="d-block">Nome do Link</label>
-                                                    <input class="form-control" type="text" id="beacons-link-name">
+                                                <div class="form-floating mb-3">
+                                                    <input type="text" class="form-control" id="beacons-link-name" placeholder="Dê um nome para o seu link">
+                                                    <label for="beacons-link-name">Nome do Link</label>
                                                 </div>
-                                                <div class="w-100">
+                                                <div class="form-floating">
+                                                    <input type="text" class="form-control" id="beacons-link-value" placeholder="https://www.com">
                                                     <label for="beacons-link-value" class="d-block">Link</label>
-                                                    <input class="form-control" type="text" id="beacons-link-value">
                                                 </div>
                                             </div>
 
@@ -114,11 +114,12 @@
                                 <div id="accordionEmail" class="accordion-collapse collapse" aria-labelledby="email" data-bs-parent="#accordionExample">
                                     <div class="accordion-body section-email">
                                         <div class="d-flex justify-between align-items-center my-4" data-element="email">
-                                            <div class="w-100">
-                                                <label>
-                                                    <span class="d-block">Email</span>
-                                                    <input class="form-control" type="email" id="beacons-email">
-                                                </label>
+                                            <div class="form-floating w-100">
+                                                <input type="email" class="form-control" id="beacons-email" placeholder="name@example.com">
+                                                <label for="beacons-email">Email</label>
+                                                <div id="youtubelHelp" class="form-text">
+                                                    Seu melhor Email.
+                                                </div>
                                             </div>
                                             <ion-icon class="btn-add" name="add-circle-outline" size="large"></ion-icon>
                                         </div>
@@ -139,11 +140,12 @@
                                 <div id="accordionTweet" class="accordion-collapse collapse" aria-labelledby="tweet" data-bs-parent="#accordionExample">
                                     <div class="accordion-body section-tweet">
                                         <div class="d-flex justify-between align-items-center my-4" data-element="tweet">
-                                            <div class="w-100">
-                                                <label>
-                                                    <span class="d-block">Tweet</span>
-                                                    <input class="form-control" type="text" id="beacons-tweet">
-                                                </label>
+                                            <div class="form-floating w-100">
+                                                <input type="email" class="form-control" id="beacons-tweet" placeholder="name@example.com">
+                                                <label for="beacons-tweet">Tweet</label>
+                                                <div id="youtubelHelp" class="form-text">
+                                                    @username
+                                                </div>
                                             </div>
                                             <ion-icon class="btn-add" name="add-circle-outline" size="large"></ion-icon>
                                         </div>
@@ -164,11 +166,12 @@
                                 <div id="accordionVideo" class="accordion-collapse collapse" aria-labelledby="video" data-bs-parent="#accordionExample">
                                     <div class="accordion-body section-video">
                                         <div class="d-flex justify-between align-items-center my-4" data-element="video">
-                                            <div class="w-100">
-                                                <label>
-                                                    <span class="d-block">Video</span>
-                                                    <input class="form-control" type="text" id="beacons-video">
-                                                </label>
+                                            <div class="form-floating w-100">
+                                                <input type="text" class="form-control" id="beacons-video" placeholder="YpkTADgjBas">
+                                                <label for="beacons-video">YouTube</label>
+                                                <div id="youtubelHelp" class="form-text">
+                                                    Apenas ID. Ex: YpkTADgjBas. Normalmente está após "watch?v=".
+                                                </div>
                                             </div>
                                             <ion-icon class="btn-add" name="add-circle-outline" size="large"></ion-icon>
                                         </div>
@@ -189,11 +192,16 @@
                                 <div id="accordionMusic" class="accordion-collapse collapse" aria-labelledby="music" data-bs-parent="#accordionExample">
                                     <div class="accordion-body section-music">
                                         <div class="d-flex justify-between align-items-center my-4" data-element="music">
-                                            <div class="w-100">
-                                                <label>
-                                                    <span class="d-block mb-3">Spotify</span>
-                                                    <input class="form-control" type="text" id="beacons-music">
-                                                </label>
+                                            <div class="form-floating w-100">
+                                                <input type="text" class="form-control" id="beacons-music" placeholder="YpkTADgjBas">
+                                                <label for="beacons-music">Spotify</label>
+                                                <div id="spotifylHelp" class="form-text">
+                                                    Copie o código gerado pelo spotify, e cole todo o
+                                                    <code>
+                                                            iframe
+                                                        </code>
+                                                    no campo.
+                                                </div>
                                             </div>
                                             <ion-icon class="btn-add" name="add-circle-outline" size="large"></ion-icon>
                                         </div>
@@ -214,6 +222,15 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <!-- COOKIES -->
+        <div class="cookies-container">
+            <div class="cookie-content">
+                <p>
+                    Nossa plataforma utiliza cookies para fornecer uma ótima experiência a seus usuários; para identificar seus membros registrados (usuários que se registraram em nosso site); monitorar e analisar o desempenho, operação e eficácia da plataforma online; e para garantir que nossa plataforma seja segura. Os cookies que são inicialmente adicionados à sua navegação e acesso podem ser categorizados como cookies essenciais. Esses cookies permitem funcionalidades básicas, como segurança, verificação de identidade e gerenciamento de rede e não podem ser desativados em nosso site.
+                </p>
+                <button class="btn cookies-save">Aceitar e Continuar</button>
             </div>
         </div>
     </div>
