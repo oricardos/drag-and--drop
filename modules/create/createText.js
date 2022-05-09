@@ -1,11 +1,22 @@
-export default function createText(el) {
-  const textValue = document.getElementById('beacons-bio');
-  if (textValue.value !== '') {
-    const text = document.createElement('p');
-    text.classList.add('text-bio');
-    text.innerHTML = textValue.value;
-    el.appendChild(text);
+import createSectionEl from './createSectionEl.js';
 
-    textValue.focus();
-  }
+export default function createText() {
+  const textValue = document.getElementById('beacons-bio');
+  const addBio = document.querySelector('.add-bio');
+
+  addBio.addEventListener('click', function (evt) {
+    if (textValue.value !== '') {
+      const el = evt.target.parentElement;
+      const section = el.parentElement.classList[1];
+      const dataEl = el.getAttribute('data-element');
+
+      const text = document.createElement('p');
+      text.classList.add(dataEl);
+      text.innerHTML = textValue.value;
+
+      createSectionEl(section, text);
+
+      textValue.focus();
+    }
+  });
 }

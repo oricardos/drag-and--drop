@@ -1,35 +1,44 @@
-export default function createEmail(el) {
+import createSectionEl from './createSectionEl.js';
+
+export default function createEmail() {
   const mailto = document.getElementById('beacons-email');
-  if (mailto.value !== '') {
-    const row = document.createElement('div');
-    row.classList.add('row');
+  const addEmail = document.querySelector('.add-email');
 
-    const leftCol = document.createElement('div');
-    const rightCol = document.createElement('div');
+  addEmail.addEventListener('click', function (evt) {
+    if (mailto.value !== '') {
+      const el = evt.target.parentElement;
+      const section = el.parentElement.classList[1];
 
-    leftCol.classList.add('col-2', 'd-flex', 'align-items-center');
-    rightCol.classList.add('col-10');
+      const row = document.createElement('div');
+      row.classList.add('row');
 
-    row.appendChild(leftCol);
-    row.appendChild(rightCol);
+      const leftCol = document.createElement('div');
+      const rightCol = document.createElement('div');
 
-    const icon = document.createElement('ion-icon');
-    icon.setAttribute('name', 'mail-outline');
+      leftCol.classList.add('col-2', 'd-flex', 'align-items-center');
+      rightCol.classList.add('col-10');
 
-    leftCol.appendChild(icon);
+      row.appendChild(leftCol);
+      row.appendChild(rightCol);
 
-    const email = document.createElement('a');
-    email.classList.add('link-primary');
-    email.setAttribute('href', `mailto: ${mailto.value}`);
-    email.setAttribute('target', '_blank');
-    email.innerHTML = mailto.value;
+      const icon = document.createElement('ion-icon');
+      icon.setAttribute('name', 'mail-outline');
 
-    leftCol.appendChild(email);
-    rightCol.appendChild(email);
+      leftCol.appendChild(icon);
 
-    el.appendChild(row);
+      const email = document.createElement('a');
+      email.classList.add('link-primary');
+      email.setAttribute('href', `mailto: ${mailto.value}`);
+      email.setAttribute('target', '_blank');
+      email.innerHTML = mailto.value;
 
-    mailto.value = '';
-    mailto.focus();
-  }
+      leftCol.appendChild(email);
+      rightCol.appendChild(email);
+
+      createSectionEl(section, row);
+
+      mailto.value = '';
+      mailto.focus();
+    }
+  });
 }

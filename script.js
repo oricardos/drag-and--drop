@@ -1,7 +1,18 @@
-import createSectionEl from './modules/create/createSectionEl.js';
 import cookie from './modules/cookie.js';
+import createText from './modules/create/createText.js';
+import createLink from './modules/create/createLink.js';
+import createEmail from './modules/create/createEmail.js';
+import createTweet from './modules/create/createTweet.js';
+import createYouTube from './modules/create/createYouTube.js';
+import createMusic from './modules/create/createMusic.js';
 
 cookie();
+createText();
+createLink();
+createEmail();
+createTweet();
+createYouTube();
+createMusic();
 
 function log(message) {
   console.log(message);
@@ -9,16 +20,6 @@ function log(message) {
 
 const cards = document.querySelectorAll('.card-element');
 const dropzones = document.querySelectorAll('[class^="dropzone-"]');
-const elements = document.querySelectorAll('.btn-add');
-
-elements.forEach((element) => {
-  element.addEventListener('click', function (evt) {
-    const el = evt.target.parentElement;
-    const section = evt.target.parentElement.parentElement.classList[1];
-    const dataEl = el.getAttribute('data-element');
-    createSectionEl(section, dataEl);
-  });
-});
 
 cards.forEach((card) => {
   card.addEventListener('dragstart', dragstart);

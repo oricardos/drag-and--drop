@@ -44,8 +44,8 @@ body {
     cursor: url(https://ssl.gstatic.com/ui/v1/icons/mail/images/2/openhand.cur), default !important;
 }
 
-.btn-add {
-    cursor: pointer;
+[class*="add-"] {
+    cursor: pointer
 }
 
 .container-grid {
