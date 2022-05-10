@@ -5,7 +5,5 @@ export default function createSectionEl(section, el) {
   divSection.classList.add(`beacons-${section}`);
   divSection.appendChild(el);
 
-  console.log(divSection);
-
   return preview.appendChild(divSection);
 }
