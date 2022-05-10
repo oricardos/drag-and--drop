@@ -7,6 +7,10 @@ export default function createLink() {
 
   addLink.addEventListener('click', function (evt) {
     if (linkValue.value !== '' && linkName.value !== '') {
+      const switchTexts = document.querySelector('.switch-links');
+      switchTexts.classList.remove('d-none');
+      switchTexts.classList.add('d-flex');
+
       const el = evt.target.parentElement;
       const section = el.parentElement.classList[1];
 

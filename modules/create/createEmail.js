@@ -6,6 +6,10 @@ export default function createEmail() {
 
   addEmail.addEventListener('click', function (evt) {
     if (mailto.value !== '') {
+      const switchTexts = document.querySelector('.switch-email');
+      switchTexts.classList.remove('d-none');
+      switchTexts.classList.add('d-flex');
+
       const el = evt.target.parentElement;
       const section = el.parentElement.classList[1];
 

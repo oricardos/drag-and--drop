@@ -5,6 +5,10 @@ export default function createMusic(el) {
   const addSpotify = document.querySelector('.add-spotify');
   addSpotify.addEventListener('click', function (evt) {
     if (iframeValue.value !== '') {
+      const switchTexts = document.querySelector('.switch-spotify');
+      switchTexts.classList.remove('d-none');
+      switchTexts.classList.add('d-flex');
+
       const el = evt.target.parentElement;
       const section = el.parentElement.classList[1];
 

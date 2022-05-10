@@ -6,6 +6,10 @@ export default function createText() {
 
   addBio.addEventListener('click', function (evt) {
     if (textValue.value !== '') {
+      const switchTexts = document.querySelector('.switch-texts');
+      switchTexts.classList.remove('d-none');
+      switchTexts.classList.add('d-flex');
+
       const el = evt.target.parentElement;
       const section = el.parentElement.classList[1];
       const dataEl = el.getAttribute('data-element');

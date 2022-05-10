@@ -6,6 +6,10 @@ export default function createTweet() {
 
   addTweet.addEventListener('click', function (evt) {
     if (twitterValue.value !== '') {
+      const switchTexts = document.querySelector('.switch-tweet');
+      switchTexts.classList.remove('d-none');
+      switchTexts.classList.add('d-flex');
+
       const el = evt.target.parentElement;
       const section = el.parentElement.classList[1];
 
