@@ -1,5 +1,14 @@
+div[class^="beacons-section"]{
+    margin: 2rem 0;
+}
+
 .beacons-section-header {
     display: flex;
+    margin: 0!important;
+}
+
+.profile-image {
+    width: 100px;
 }
 
 .beacons-section-links {

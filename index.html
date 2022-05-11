@@ -32,9 +32,25 @@
                                 <div id="collapseHeader" class="accordion-collapse collapse show" aria-labelledby="header" data-bs-parent="#accordionElements">
                                     <div class="accordion-body section-header">
                                         <div class="d-flex justify-between align-items-center my-4 gap-5" data-element="profile-photo">
-                                            <div class="w-100 align-items-center">
-                                                <label for="beacons-profile-photo" class="form-label">Foto de Perfil</label>
-                                                <input class="form-control" type="file" id="beacons-profile-photo">
+                                            <div class="d-flex flex-column w-100">
+                                                <label class="form-label">Foto de Perfil</label>
+
+                                                <div class="btn-group mb-3" role="group" aria-label="Basic radio toggle button group">
+                                                    <input type="radio" class="btn-check" name="btnradio" id="chooseFile" autocomplete="off" checked>
+                                                    <label class="btn btn-outline-primary" for="chooseFile">Escolher Arquivo</label>
+
+                                                    <input type="radio" class="btn-check" name="btnradio" id="chooseUrl" autocomplete="off">
+                                                    <label class="btn btn-outline-primary" for="chooseUrl">URL</label>
+                                                </div>
+
+                                                <div class="chooseFile">
+                                                    <input class="form-control" type="file" id="file">
+                                                </div>
+
+                                                <div class="form-floating chooseUrl d-none">
+                                                    <input type="text" class="form-control" id="url" placeholder="https://www.com">
+                                                    <label for="beacons-link-value" class="d-block">Add URL</label>
+                                                </div>
                                             </div>
                                             <ion-icon class="add-profilephoto" name="add-circle-outline" size="large"></ion-icon>
                                         </div>
