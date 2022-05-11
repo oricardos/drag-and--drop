@@ -19,7 +19,7 @@ export default function createTweet() {
       const col = document.createElement('div');
       col.classList.add('col-12');
 
-      // TODO: CONSEGUIR MOSTRAR O TWEET
+      // todo: conseguir mostrar o tweet
       const tweet = `
         <span class="badge bg-primary">
           <a href="https://twitter.com/${twitterValue.value}?ref_src=twsrc%5Etfw"

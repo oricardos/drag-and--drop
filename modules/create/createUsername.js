@@ -3,24 +3,49 @@ export default function createUsername() {
   const nameValue = document.getElementById('beacons-name');
   const addUsername = document.querySelector('.add-username');
 
+  const name = window.localStorage.getItem('name');
+  const username = window.localStorage.getItem('username');
+
   addUsername.addEventListener('click', function (evt) {
     if (usernameValue.value !== '' && nameValue.value !== '') {
+      window.localStorage.setItem('username', usernameValue.value);
+      window.localStorage.setItem('name', nameValue.value);
+
       const el = evt.target.parentElement;
       const dataEl = el.getAttribute('data-element');
 
-      const name = document.createElement('h5');
-      name.innerHTML = nameValue.value;
+      const nameElement = document.createElement('h5');
+      nameElement.innerHTML = nameValue.value;
 
-      const username = document.createElement('p');
-      username.classList.add(dataEl);
-      username.innerHTML = `@${usernameValue.value}`;
+      const usernameElement = document.createElement('p');
+      usernameElement.classList.add(dataEl);
+      usernameElement.innerHTML = `@${usernameValue.value}`;
 
       const sectionHeader = document.querySelector('.beacons-section-header');
       const texts = document.createElement('div');
       texts.classList.add('d-flex', 'flex-column', 'ml-5');
-      texts.appendChild(name);
-      texts.appendChild(username);
+      texts.appendChild(nameElement);
+      texts.appendChild(usernameElement);
       sectionHeader.appendChild(texts);
+      document.location.reload(true);
     }
   });
+  if (name && username) {
+    nameValue.value = name;
+    usernameValue.value = username;
+
+    const nameElement = document.createElement('h5');
+    nameElement.innerHTML = name;
+
+    const usernameElement = document.createElement('p');
+    usernameElement.classList.add('user-name');
+    usernameElement.innerHTML = `@${username}`;
+
+    const sectionHeader = document.querySelector('.beacons-section-header');
+    const texts = document.createElement('div');
+    texts.classList.add('d-flex', 'flex-column', 'ml-5');
+    texts.appendChild(nameElement);
+    texts.appendChild(usernameElement);
+    sectionHeader.appendChild(texts);
+  }
 }

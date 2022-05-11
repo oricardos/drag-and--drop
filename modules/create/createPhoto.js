@@ -1,8 +1,7 @@
 import createSectionEl from './createSectionEl.js';
 
-export default function createPhoto(evt, photo) {
-  const el = evt.target.parentElement;
-  const section = el.parentElement.classList[1];
+export default function createPhoto(photo) {
+  const section = 'section-header';
 
   const row = document.createElement('div');
   row.classList.add('row');
@@ -10,9 +9,9 @@ export default function createPhoto(evt, photo) {
   const col = document.createElement('div');
   col.classList.add('col-12');
 
-  //CRIANDO IMAGEM
+  //criando imagem
   const img = document.createElement('img');
-  img.classList.add('profile-image', 'img-fluid', 'rounded-circle');
+  img.classList.add('profile-image', 'rounded-circle');
   img.src = photo;
   col.appendChild(img);
 

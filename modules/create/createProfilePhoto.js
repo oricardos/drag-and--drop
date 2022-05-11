@@ -5,6 +5,12 @@ export default function createProfilePhoto() {
   const chooseUrlSection = document.querySelector('.chooseUrl');
   const inputUrl = document.getElementById('url');
 
+  const profilePhotoUrl = window.localStorage.getItem('profilePhotoUrl');
+  const profilePhotoFile = window.localStorage.getItem('profilePhotoFile');
+
+  const photo = document.getElementById('file');
+  const addProfilePhoto = document.querySelector('.add-profilephoto');
+
   const choosesBtns = document.querySelectorAll('.btn-check');
   choosesBtns.forEach((choose) => {
     choose.addEventListener('click', function (evt) {
@@ -21,14 +27,22 @@ export default function createProfilePhoto() {
     });
   });
 
-  const photo = document.getElementById('file');
-  const addProfilePhoto = document.querySelector('.add-profilephoto');
-
-  addProfilePhoto.addEventListener('click', function (evt) {
+  addProfilePhoto.addEventListener('click', function () {
     if (inputUrl.value !== '') {
-      createPhoto(evt, inputUrl.value);
+      window.localStorage.setItem('profilePhotoUrl', inputUrl.value);
+      createPhoto(inputUrl.value);
+      document.location.reload(true);
     } else if (photo.value !== '') {
-      createPhoto(evt, photo.value);
+      window.localStorage.setItem('profilePhotoFile', photo.value);
+      createPhoto(photo.value);
+      document.location.reload(true);
     }
   });
+
+  if (profilePhotoUrl) {
+    inputUrl.value = profilePhotoUrl;
+    createPhoto(profilePhotoUrl);
+  } else if (profilePhotoFile) {
+    createPhoto(profilePhotoFile);
+  }
 }
