@@ -5,10 +5,18 @@ div[class^="beacons-section"]{
 .beacons-section-header {
     display: flex;
     margin: 0!important;
+    gap: 1rem;
+    align-items: center;
 }
 
 .profile-image {
     width: 100px;
+}
+
+p.user-name {
+    font-size: 14px;
+    color: #767676;
+    margin: 0;
 }
 
 .beacons-section-links {

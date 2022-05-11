@@ -1,7 +1,6 @@
 import createSectionEl from './createSectionEl.js';
 
 export default function createPhoto(evt, photo) {
-  console.log(photo);
   const el = evt.target.parentElement;
   const section = el.parentElement.classList[1];
 
