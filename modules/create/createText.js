@@ -3,24 +3,37 @@ import createSectionEl from './createSectionEl.js';
 export default function createText() {
   const textValue = document.getElementById('beacons-bio');
   const addBio = document.querySelector('.add-bio');
+  const bio = window.localStorage.getItem('bio');
 
-  addBio.addEventListener('click', function (evt) {
+  function createBioSection(text) {
+    const section = document.createElement('div');
+    const titleSection = document.createElement('h3');
+    const textElement = document.createElement('p');
+    titleSection.innerHTML = 'Biografia';
+    textElement.classList.add('bio');
+    textElement.innerHTML = text;
+
+    section.appendChild(titleSection);
+    section.appendChild(textElement);
+
+    createSectionEl('section-text', section);
+  }
+
+  addBio.addEventListener('click', () => {
     if (textValue.value !== '') {
+      window.localStorage.setItem('bio', textValue.value);
       const switchTexts = document.querySelector('.switch-texts');
       switchTexts.classList.remove('d-none');
       switchTexts.classList.add('d-flex');
 
-      const el = evt.target.parentElement;
-      const section = el.parentElement.classList[1];
-      const dataEl = el.getAttribute('data-element');
-
-      const text = document.createElement('p');
-      text.classList.add(dataEl);
-      text.innerHTML = textValue.value;
-
-      createSectionEl(section, text);
-
+      createBioSection(textValue.value);
+      document.location.reload(true);
       textValue.focus();
     }
   });
+
+  if (bio) {
+    textValue.value = bio;
+    createBioSection(bio);
+  }
 }
