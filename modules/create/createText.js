@@ -5,6 +5,7 @@ export default function createText() {
   const addBio = document.querySelector('.add-bio');
   const bio = window.localStorage.getItem('bio');
 
+  // função que cria o elemento
   function createBioSection(text) {
     const section = document.createElement('div');
     const titleSection = document.createElement('h3');
@@ -19,6 +20,7 @@ export default function createText() {
     createSectionEl('section-text', section);
   }
 
+  // evento no botão
   addBio.addEventListener('click', () => {
     if (textValue.value !== '') {
       window.localStorage.setItem('bio', textValue.value);

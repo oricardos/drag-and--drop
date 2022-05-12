@@ -14,7 +14,7 @@ import showLinks from './modules/showSections/showLinks.js';
 import showEmail from './modules/showSections/showEmail.js';
 import showTweet from './modules/showSections/showTweet.js';
 import showVideo from './modules/showSections/showVideo.js';
-import showSpotify from './modules/showSections/showSpotify.js';
+import showMusic from './modules/showSections/showMusic.js';
 
 cookie();
 draganddrop();
@@ -32,4 +32,4 @@ showLinks();
 showEmail();
 showTweet();
 showVideo();
-showSpotify();
+showMusic();

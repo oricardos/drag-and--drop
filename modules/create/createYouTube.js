@@ -3,33 +3,44 @@ import createSectionEl from './createSectionEl.js';
 export default function createYouTube() {
   const linkValue = document.getElementById('beacons-video');
   const addLink = document.querySelector('.add-video');
+  const video = window.localStorage.getItem('video');
 
-  addLink.addEventListener('click', function (evt) {
-    if (linkValue.value !== '') {
-      const switchTexts = document.querySelector('.switch-video');
-      switchTexts.classList.remove('d-none');
-      switchTexts.classList.add('d-flex');
-
-      const el = evt.target.parentElement;
-      const section = el.parentElement.classList[1];
-
+  // função que cria o elemento
+  function createYoutubeSection(link){
       const row = document.createElement('div');
-      row.classList.add('row');
-
       const col = document.createElement('div');
+      const titleSection = document.createElement('h3');
+      
+      row.classList.add('row');
       col.classList.add('video-container');
+      titleSection.innerHTML = 'Youtube';
+      titleSection.classList.add('p-0');
 
       const video = `
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/${linkValue.value}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/${link}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     `;
 
       col.innerHTML = video;
+      row.appendChild(titleSection);
       row.appendChild(col);
 
-      createSectionEl(section, row);
+      createSectionEl('section-video', row);
+  }
 
-      linkValue.value = '';
-      linkValue.focus();
+  addLink.addEventListener('click', function () {
+    if (linkValue.value !== '') {
+      window.localStorage.setItem('video', linkValue.value);
+
+      createYoutubeSection(linkValue.value);
     }
   });
+
+  if (video || linkValue.value !== '') {
+      const switchYouTube = document.querySelector('.switch-video');
+      switchYouTube.classList.remove('d-none');
+      switchYouTube.classList.add('d-flex');
+
+    linkValue.value = video;
+    createYoutubeSection(video);
+  }
 }

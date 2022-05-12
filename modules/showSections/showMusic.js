@@ -1,5 +1,5 @@
-export default function showSpotify() {
-  const isChecked = document.querySelector('#switch-spotify');
+export default function showMusic() {
+  const isChecked = document.querySelector('#switch-music');
 
   isChecked.addEventListener('change', (evt) => {
     if (evt.target.checked) {

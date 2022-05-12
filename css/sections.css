@@ -27,6 +27,10 @@ p.user-name {
     text-overflow: ellipsis;
 }
 
+.beacons-section-video {
+    padding: 0 1rem;
+}
+
 /* YouTube */
 .video-container {
     overflow: hidden;
