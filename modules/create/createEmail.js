@@ -3,25 +3,21 @@ import createSectionEl from './createSectionEl.js';
 export default function createEmail() {
   const mailto = document.getElementById('beacons-email');
   const addEmail = document.querySelector('.add-email');
+  const email = window.localStorage.getItem('email');
 
-  addEmail.addEventListener('click', function (evt) {
-    if (mailto.value !== '') {
-      const switchTexts = document.querySelector('.switch-email');
-      switchTexts.classList.remove('d-none');
-      switchTexts.classList.add('d-flex');
-
-      const el = evt.target.parentElement;
-      const section = el.parentElement.classList[1];
-
+  // função que cria o elemento
+  function createEmailSection(email) {
       const row = document.createElement('div');
-      row.classList.add('row');
-
       const leftCol = document.createElement('div');
       const rightCol = document.createElement('div');
-
+      const titleSection = document.createElement('h3');
+      
+      row.classList.add('row');
       leftCol.classList.add('col-2', 'd-flex', 'align-items-center');
       rightCol.classList.add('col-10');
+      titleSection.innerHTML = 'Email';
 
+      row.appendChild(titleSection);
       row.appendChild(leftCol);
       row.appendChild(rightCol);
 
@@ -30,19 +26,33 @@ export default function createEmail() {
 
       leftCol.appendChild(icon);
 
-      const email = document.createElement('a');
-      email.classList.add('link-primary');
-      email.setAttribute('href', `mailto: ${mailto.value}`);
-      email.setAttribute('target', '_blank');
-      email.innerHTML = mailto.value;
+      const emailElement = document.createElement('a');
+      emailElement.classList.add('link-primary');
+      emailElement.setAttribute('href', `mailto: ${email}`);
+      emailElement.setAttribute('target', '_blank');
+      emailElement.innerHTML = email;
 
-      leftCol.appendChild(email);
-      rightCol.appendChild(email);
+      leftCol.appendChild(emailElement);
+      rightCol.appendChild(emailElement);
 
-      createSectionEl(section, row);
+      createSectionEl('section-email', row);
+  }
 
-      mailto.value = '';
-      mailto.focus();
+  addEmail.addEventListener('click', function (evt) {
+    if (mailto.value !== '') {
+      window.localStorage.setItem('email', mailto.value);
+
+      createEmailSection(mailto.value);
+      document.location.reload(true);
     }
   });
+
+  if (email) {
+    const switchEmail = document.querySelector('.switch-email');
+      switchEmail.classList.remove('d-none');
+      switchEmail.classList.add('d-flex');
+
+    mailto.value = email;
+    createEmailSection(email);
+  }
 }
