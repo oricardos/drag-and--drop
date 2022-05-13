@@ -94,39 +94,60 @@ body {
 }
 
 .border-preview {
-    border-radius: 41px;
-    z-index: 1000;
+    border-radius: 40px;
+    background-color: #888;
+    height: 630px;
+    width: 300px;
+    padding: 14px;
+    position: relative;
 }
 
 .dropzone-preview {
-    border-radius: 41px;
-    height: 629px;
-    width: 300px;
-    padding: 16px;
-    background-image: linear-gradient(to right bottom, #cfe2ff, #c4eeff, #c8f7f5, #dbfce9, #f6ffe1);
-    border: solid 10px #808080;
-    overflow-x:hidden;
-    overflow-y:auto;
+    background-color: #fff;
+    border-radius: 40px;
+    height: 121%;
+    width: 121%;
+    transform: scale(.83);
+    -moz-transform: scale(.83);
+    -o-transform: scale(.83);
+    -webkit-transform: scale(.83);
+    overflow: hidden;
+    transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    z-index: 1;
+}
+
+.preview {
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden auto;
+    background-attachment: scroll;
+    background-position: center center;
+    max-height: 812px;
+    padding: 30px 20px 100px;
 }
 
 /* width */
-.dropzone-preview::-webkit-scrollbar {
+.preview::-webkit-scrollbar {
     width: 10px;
   }
   
   /* Track */
-  .dropzone-preview::-webkit-scrollbar-track {
-    background: #f1f1f1;
+  .preview::-webkit-scrollbar-track {
+    background: #fff;
   }
   
   /* Handle */
-  .dropzone-preview::-webkit-scrollbar-thumb {
-    background: #888;
+  .preview::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 40px;
   }
   
   /* Handle on hover */
-  .dropzone-preview::-webkit-scrollbar-thumb:hover {
-    background: #555;
+  .preview::-webkit-scrollbar-thumb:hover {
+    background: #bbb;
   }
 
 .card-element {
