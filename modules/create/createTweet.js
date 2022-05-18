@@ -1,3 +1,4 @@
+import showSections from '../showSections/showSections.js';
 import createSectionEl from './createSectionEl.js';
 
 export default function createTweet() {
@@ -6,14 +7,13 @@ export default function createTweet() {
   const twitter = window.localStorage.getItem('twitter');
 
   // função que cria o elemento
-  function createTwitterSection(profile){
+  function createTwitterSection(profile) {
     const row = document.createElement('div');
     const col = document.createElement('div');
     const titleSection = document.createElement('h3');
 
     titleSection.innerHTML = 'Twitter';
 
-    
     row.classList.add('row');
     col.classList.add('col-12');
 
@@ -46,8 +46,9 @@ export default function createTweet() {
 
   if (twitter) {
     const switchTwitter = document.querySelector('.switch-tweet');
-      switchTwitter.classList.remove('d-none');
-      switchTwitter.classList.add('d-flex');
+    switchTwitter.classList.remove('uk-hidden');
+    switchTwitter.classList.add('uk-flex');
+    showSections('#switch-tweet', '.beacons-section-twitter');
 
     twitterValue.value = twitter;
     createTwitterSection(twitter);

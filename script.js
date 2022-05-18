@@ -9,13 +9,6 @@ import createTweet from './modules/create/createTweet.js';
 import createYouTube from './modules/create/createYouTube.js';
 import createMusic from './modules/create/createMusic.js';
 
-import showTexts from './modules/showSections/showTexts.js';
-import showLinks from './modules/showSections/showLinks.js';
-import showEmail from './modules/showSections/showEmail.js';
-import showTweet from './modules/showSections/showTweet.js';
-import showVideo from './modules/showSections/showVideo.js';
-import showMusic from './modules/showSections/showMusic.js';
-
 cookie();
 draganddrop();
 createProfilePhoto();
@@ -26,10 +19,3 @@ createEmail();
 createTweet();
 createYouTube();
 createMusic();
-
-showTexts();
-showLinks();
-showEmail();
-showTweet();
-showVideo();
-showMusic();

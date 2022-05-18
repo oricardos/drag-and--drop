@@ -1,3 +1,4 @@
+import showSections from '../showSections/showSections.js';
 import createSectionEl from './createSectionEl.js';
 
 export default function createMusic(el) {
@@ -5,13 +6,14 @@ export default function createMusic(el) {
   const addMusic = document.querySelector('.add-music');
   const iframe = window.localStorage.getItem('iframe');
 
-  // função que cria o elemento 
+  // função que cria o elemento
   function createIframeSection(iframe) {
     const src = iframe.split('/')[2];
     const getPlataformName = src.split('.')[1];
     // deixa a primeira letra maiúscula
-    const capitalize = getPlataformName.charAt(0).toUpperCase() + getPlataformName.slice(1);
-    
+    const capitalize =
+      getPlataformName.charAt(0).toUpperCase() + getPlataformName.slice(1);
+
     const titleSection = document.createElement('h3');
     const row = document.createElement('div');
     row.classList.add('row');
@@ -21,7 +23,7 @@ export default function createMusic(el) {
 
     col.innerHTML = iframe;
     titleSection.innerHTML = `${capitalize}`;
-    row.appendChild(titleSection)
+    row.appendChild(titleSection);
     row.appendChild(col);
 
     createSectionEl('section-music', row);
@@ -32,14 +34,15 @@ export default function createMusic(el) {
     if (iframeValue.value !== '') {
       window.localStorage.setItem('iframe', iframeValue.value);
       createIframeSection(iframeValue.value);
-      document.location.reload(true)
+      document.location.reload(true);
     }
   });
 
   if (iframe || iframeValue.value !== '') {
-      const switchMusic = document.querySelector('.switch-music');
-      switchMusic.classList.remove('d-none');
-      switchMusic.classList.add('d-flex');
+    const switchMusic = document.querySelector('.switch-music');
+    switchMusic.classList.remove('uk-hidden');
+    switchMusic.classList.add('uk-flex');
+    showSections('#switch-music', '.beacons-section-music');
 
     iframeValue.value = iframe;
     createIframeSection(iframe);

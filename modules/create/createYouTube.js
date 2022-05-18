@@ -1,4 +1,5 @@
 import createSectionEl from './createSectionEl.js';
+import showSections from '../showSections/showSections.js';
 
 export default function createYouTube() {
   const linkValue = document.getElementById('beacons-video');
@@ -38,8 +39,9 @@ export default function createYouTube() {
 
   if (video || linkValue.value !== '') {
     const switchYouTube = document.querySelector('.switch-video');
-    switchYouTube.classList.remove('d-none');
-    switchYouTube.classList.add('d-flex');
+    switchYouTube.classList.remove('uk-hidden');
+    switchYouTube.classList.add('uk-flex');
+    showSections('#switch-video', '.beacons-section-video');
 
     linkValue.value = video;
     createYoutubeSection(video);

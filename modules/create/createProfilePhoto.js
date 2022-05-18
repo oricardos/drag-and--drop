@@ -11,17 +11,17 @@ export default function createProfilePhoto() {
   const photo = document.getElementById('file');
   const addProfilePhoto = document.querySelector('.add-profilephoto');
 
-  const choosesBtns = document.querySelectorAll('.btn-check');
+  const choosesBtns = document.querySelectorAll('.uk-radio');
   choosesBtns.forEach((choose) => {
     choose.addEventListener('click', function (evt) {
       const el = evt.target;
       if (el.id === 'chooseFile') {
-        chooseFileSection.classList.remove('d-none');
-        chooseUrlSection.classList.add('d-none');
+        chooseFileSection.classList.remove('uk-hidden');
+        chooseUrlSection.classList.add('uk-hidden');
       }
       if (el.id === 'chooseUrl') {
-        chooseFileSection.classList.add('d-none');
-        chooseUrlSection.classList.remove('d-none');
+        chooseFileSection.classList.add('uk-hidden');
+        chooseUrlSection.classList.remove('uk-hidden');
         inputUrl.focus();
       }
     });

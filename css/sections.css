@@ -13,6 +13,7 @@ div[class^="beacons-section"]{
     width: 100px;
     height: 100px;
     object-fit: cover;
+    border-radius: 50%;
 }
 
 p.user-name {
@@ -25,10 +26,6 @@ p.user-name {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-
-.beacons-section-video {
-    padding: 0 1rem;
 }
 
 /* YouTube */

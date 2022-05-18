@@ -11,7 +11,7 @@ export default function createPhoto(photo) {
 
   //criando imagem
   const img = document.createElement('img');
-  img.classList.add('profile-image', 'rounded-circle');
+  img.classList.add('profile-image');
   img.src = photo;
   col.appendChild(img);
 

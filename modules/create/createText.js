@@ -1,3 +1,4 @@
+import showSections from '../showSections/showSections.js';
 import createSectionEl from './createSectionEl.js';
 
 export default function createText() {
@@ -24,9 +25,6 @@ export default function createText() {
   addBio.addEventListener('click', () => {
     if (textValue.value !== '') {
       window.localStorage.setItem('bio', textValue.value);
-      const switchTexts = document.querySelector('.switch-texts');
-      switchTexts.classList.remove('d-none');
-      switchTexts.classList.add('d-flex');
 
       createBioSection(textValue.value);
       document.location.reload(true);
@@ -35,6 +33,11 @@ export default function createText() {
   });
 
   if (bio) {
+    const switchTexts = document.querySelector('.switch-texts');
+    switchTexts.classList.remove('uk-hidden');
+    switchTexts.classList.add('uk-flex');
+    showSections('#switch-texts', '.beacons-section-text');
+
     textValue.value = bio;
     createBioSection(bio);
   }

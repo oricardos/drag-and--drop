@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/css/uikit.min.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -18,273 +20,248 @@
             <div class="board">
                 <h2>Elementos</h2>
 
-                <div class="accordion" id="accordionElements">
-                    <div class="dropzone-elements">
-                        <!-- HEADER -->
-                        <div class="card-element" draggable="true">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHeader" aria-expanded="true" aria-controls="collapseHeader">
-                                        <ion-icon name="reorder-two-outline" class="mr-1 drag-n-drop"></ion-icon>
-                                        <h5 class="fw-bold">Header</h5>
-                                    </button>
-                                </h2>
-                                <div id="collapseHeader" class="accordion-collapse collapse show" aria-labelledby="header" data-bs-parent="#accordionElements">
-                                    <div class="accordion-body section-header">
-                                        <div class="d-flex justify-between align-items-center my-4 gap-5" data-element="profile-photo">
-                                            <div class="d-flex flex-column w-100">
-                                                <label class="form-label">Foto de Perfil</label>
+                <ul class="uk-padding" uk-accordion uk-sortable="handle: .accordion-item">
+                    <li class="accordion-item uk-open">
+                        <a class="uk-accordion-title" href="#">Header</a>
+                        <div class="uk-accordion-content uk-padding uk-background-default">
+                            <div class="accordion-body section-header">
+                                <div class="uk-flex uk-flex-bottom uk-flex-between" data-element="profile-photo">
+                                    <div class="uk-flex uk-flex-column">
 
-                                                <div class="btn-group mb-3" role="group" aria-label="Basic radio toggle button group">
-                                                    <input type="radio" class="btn-check" name="btnradio" id="chooseFile" autocomplete="off" checked>
-                                                    <label class="btn btn-outline-primary" for="chooseFile">Escolher Arquivo</label>
+                                        <label class="uk-form-label">Foto de Perfil</label>
 
-                                                    <input type="radio" class="btn-check" name="btnradio" id="chooseUrl" autocomplete="off">
-                                                    <label class="btn btn-outline-primary" for="chooseUrl">URL</label>
-                                                </div>
+                                        <div class="btn-group mb-3" role="group" aria-label="Basic radio toggle button group">
+                                            <input type="radio" class="uk-radio" name="btnradio" id="chooseFile" autocomplete="off" checked>
+                                            <label class="uk-margin-right uk-form-label" for="chooseFile">Escolher Arquivo</label>
 
-                                                <div class="chooseFile">
-                                                    <input class="form-control" type="file" id="file">
-                                                </div>
-
-                                                <div class="form-floating chooseUrl d-none">
-                                                    <input type="text" class="form-control" id="url" placeholder="https://www.com">
-                                                    <label for="beacons-link-value" class="d-block">Add URL</label>
-                                                </div>
-                                            </div>
-                                            <ion-icon class="add-profilephoto" name="add-circle-outline" size="large"></ion-icon>
+                                            <input type="radio" class="uk-radio" name="btnradio" id="chooseUrl" autocomplete="off">
+                                            <label class="uk-form-label" for="chooseUrl">URL</label>
                                         </div>
-                                        <hr class="my-5" />
-                                        <div class="d-flex justify-between align-items-center my-4" data-element="user-name">
-                                            <div class="d-flex flex-column w-100 align-items-start">
-                                                <div class="form-floating mb-3">
-                                                    <input type="text" class="form-control" id="beacons-name" placeholder="Insira seu nome">
-                                                    <label for="beacons-name">Nome</label>
-                                                </div>
 
-                                                <div class="form-floating mb-3">
-                                                    <input type="text" class="form-control" id="beacons-user-name" placeholder="Insira seu username">
-                                                    <label for="beacons-user-name">Username</label>
-                                                </div>
+                                        <div class="chooseFile uk-margin-top uk-flex uk-flex-column">
+                                            <label for="file" class="uk-form-label">Add Arquivo</label>
+                                            <div uk-form-custom="target: true" class="uk-form-controls">
+                                                <input type="file" id="file">
+                                                <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>
                                             </div>
-                                            <ion-icon class="add-username" name="add-circle-outline" size="large"></ion-icon>
+                                        </div>
+
+                                        <div class="uk-margin chooseUrl uk-hidden">
+                                            <label for="beacons-link-value" class="uk-form-label">Add URL</label>
+                                            <div class="uk-form-controls">
+                                                <input type="text" class="uk-input" id="url" placeholder="https://www.com">
+                                            </div>
                                         </div>
                                     </div>
+                                    <button class="uk-button uk-button-secondary add-profilephoto">Adicionar</button>
+                                </div>
+
+                                <hr class="uk-divider-small uk-margin">
+
+                                <div class="uk-flex uk-flex-between uk-flex-bottom uk-width-1-1" data-element="user-name">
+                                    <div class="uk-flex uk-flex-column align-items-start">
+                                        <div class="uk-margin">
+                                            <label for="beacons-name" class="uk-form-label">Nome</label>
+                                            <div class="uk-forms-controls">
+                                                <input type="text" class="uk-input" id="beacons-name" placeholder="Insira seu nome">
+                                            </div>
+                                        </div>
+
+                                        <div class="uk-margin-top">
+                                            <label for="beacons-user-name" class="uk-form-label">Username</label>
+                                            <div class="uk-forms-controls">
+                                                <input type="text" class="uk-input" id="beacons-user-name" placeholder="Insira seu username">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="uk-button uk-button-secondary add-username">Adicionar</button>
                                 </div>
                             </div>
                         </div>
+                        <hr class="uk-divider-icon">
+                    </li>
+                    <li class="accordion-item">
+                        <a class="uk-accordion-title" href="#">Textos</a>
+                        <div class="uk-accordion-content uk-padding uk-background-default">
+                            <div class="uk-flex-middle switch-texts uk-hidden">
+                                <div class="switch__container">
+                                    <input id="switch-texts" class="switch switch--shadow" type="checkbox" checked />
+                                    <label for="switch-texts"></label>
+                                </div>
+                                <p class="mb-0">Mostrar Textos</p>
+                            </div>
+                            <div class="accordion-body section-text">
+                                <div class="uk-flex justify-between uk-flex-bottom my-4" data-element="bio">
+                                    <div class="uk-width-1-1">
+                                        <label for="beacons-bio" class="uk-form-label">Bio</label>
+                                        <div class="uk-form-controls">
+                                            <textarea class="uk-textarea uk-form-width-large" rows="5" id="beacons-bio"></textarea>
+                                        </div>
 
-                        <!-- TEXT -->
-                        <div class="card-element" draggable="true">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="text">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseText" aria-expanded="false" aria-controls="collapseText">
-                                        <ion-icon name="reorder-two-outline" class="mr-1 drag-n-drop"></ion-icon>
-                                        <h5 class="fw-bold">Texto</h5>
-                                    </button>
-                                </h2>
-                                <div id="collapseText" class="accordion-collapse collapse" aria-labelledby="text" data-bs-parent="#accordionExample">
-                                    <div class="p-3 d-flex align-items-center switch-texts d-none">
-                                        <div class="switch__container">
-                                            <input id="switch-texts" class="switch switch--shadow" type="checkbox" checked />
-                                            <label for="switch-texts"></label>
-                                        </div>
-                                        <p class="mb-0">Mostrar Textos</p>
                                     </div>
-                                    <div class="accordion-body section-text">
-                                        <div class="d-flex justify-between align-items-center my-4" data-element="bio">
-                                            <div class="w-100 align-items-center">
-                                                <label for="beacons-bio" class="form-label">Bio</label>
-                                                <textarea class="form-control" rows="5" id="beacons-bio"></textarea>
-                                            </div>
-                                            <ion-icon class="add-bio" name="add-circle-outline" size="large"></ion-icon>
-                                        </div>
-                                    </div>
+                                    <button class="uk-button uk-button-secondary add-bio">Adicionar</button>
                                 </div>
                             </div>
                         </div>
+                        <hr class="uk-divider-icon">
+                    </li>
 
-                        <!-- LINKS -->
-                        <div class="card-element" draggable="true">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="links">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionLinks" aria-expanded="false" aria-controls="accordionLinks">
-                                        <ion-icon name="reorder-two-outline" class="mr-1 drag-n-drop"></ion-icon>
-                                        <h5 class="fw-bold">Links</h5>
-                                    </button>
-                                </h2>
-                                <div id="accordionLinks" class="accordion-collapse collapse" aria-labelledby="links" data-bs-parent="#accordionExample">
-                                    <div class="p-3 d-flex align-items-center switch-links d-none">
-                                        <div class="switch__container">
-                                            <input id="switch-links" class="switch switch--shadow" type="checkbox" checked />
-                                            <label for="switch-links"></label>
-                                        </div>
-                                        <p class="mb-0">Mostrar Links</p>
-                                    </div>
-                                    <div class="accordion-body section-links">
-                                        <div class="d-flex justify-content-between align-items-center my-4" data-element="links">
-                                            <div>
-                                                <div class="form-floating mb-3">
-                                                    <input type="text" class="form-control" id="beacons-link-name" placeholder="Dê um nome para o seu link">
-                                                    <label for="beacons-link-name">Nome do Link</label>
-                                                </div>
-                                                <div class="form-floating">
-                                                    <input type="text" class="form-control" id="beacons-link-value" placeholder="https://www.com">
-                                                    <label for="beacons-link-value" class="d-block">Link</label>
-                                                </div>
+                    <li class="accordion-item">
+                        <a href="#" class="uk-accordion-title">Links</a>
+                        <div class="uk-accordion-content uk-padding uk-background-default">
+                            <div class="uk-flex uk-flex-middle switch-links uk-hidden">
+                                <div class="switch__container">
+                                    <input id="switch-links" class="switch switch--shadow" type="checkbox" checked />
+                                    <label for="switch-links"></label>
+                                </div>
+                                <p class="mb-0">Mostrar Links</p>
+                            </div>
+                            <div class="accordion-body section-links">
+                                <div class="uk-flex uk-flex-between uk-flex-bottom my-4" data-element="links">
+                                    <div>
+                                        <div class="uk-margin">
+                                            <label for="beacons-link-name" class="uk-form-label">Nome do Link</label>
+                                            <div class="uk-form-controls">
+                                                <input type="text" class="uk-input" id="beacons-link-name" placeholder="Dê um nome para o seu link">
                                             </div>
 
-                                            <ion-icon class="add-link" name="add-circle-outline" size="large"></ion-icon>
+                                        </div>
+                                        <div class="uk-margin-top">
+                                            <label for="beacons-link-value" class="uk-form-label">Link</label>
+                                            <div class="uk-form-controls">
+                                                <input type="text" class="uk-input" id="beacons-link-value" placeholder="https://www.com">
+                                            </div>
                                         </div>
                                     </div>
+                                    <button class="uk-button uk-button-secondary add-link">Adicionar</button>
                                 </div>
                             </div>
                         </div>
+                        <hr class="uk-divider-icon">
+                    </li>
 
-                        <!-- EMAIL -->
-                        <div class="card-element" draggable="true">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="email">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionEmail" aria-expanded="false" aria-controls="accordionEmail">
-                                        <ion-icon name="reorder-two-outline" class="mr-1 drag-n-drop"></ion-icon>
-                                        <h5 class="fw-bold">Email</h5>
-                                    </button>
-                                </h2>
-                                <div id="accordionEmail" class="accordion-collapse collapse" aria-labelledby="email" data-bs-parent="#accordionExample">
-                                    <div class="p-3 d-flex align-items-center switch-email d-none">
-                                        <div class="switch__container">
-                                            <input id="switch-email" class="switch switch--shadow" type="checkbox" checked />
-                                            <label for="switch-email"></label>
-                                        </div>
-                                        <p class="mb-0">Mostrar Email</p>
-                                    </div>
-                                    <div class="accordion-body section-email">
-                                        <div class="d-flex justify-between align-items-center my-4" data-element="email">
-                                            <div class="form-floating w-100">
-                                                <input type="email" class="form-control" id="beacons-email" placeholder="name@example.com">
-                                                <label for="beacons-email">Email</label>
-                                                <div id="youtubelHelp" class="form-text">
-                                                    Seu melhor Email.
-                                                </div>
-                                            </div>
-                                            <ion-icon class="add-email" name="add-circle-outline" size="large"></ion-icon>
+                    <li class="accordion-item">
+                        <a href="#" class="uk-accordion-title">Email</a>
+                        <div class="uk-accordion-content uk-padding uk-background-default">
+                            <div class="uk-flex uk-flex-middle switch-email uk-hidden">
+                                <div class="switch__container">
+                                    <input id="switch-email" class="switch switch--shadow" type="checkbox" checked />
+                                    <label for="switch-email"></label>
+                                </div>
+                                <p class="mb-0">Mostrar Email</p>
+                            </div>
+                            <div class="accordion-body section-email">
+                                <div class="uk-flex uk-flex-middle uk-flex-between my-4" data-element="email">
+                                    <div class="uk-margin">
+                                        <label for="beacons-email" class="uk-form-label uk-text-default">Email</label>
+                                        <div class="uk-form-controls">
+                                            <input type="email" class="uk-input" id="beacons-email" placeholder="name@example.com">
                                         </div>
                                     </div>
+                                    <button class="uk-button uk-button-secondary add-email">Adicionar</button>
                                 </div>
                             </div>
                         </div>
+                        <hr class="uk-divider-icon">
+                    </li>
 
-                        <!-- Twitter -->
-                        <div class="card-element" draggable="true">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="tweet">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionTweet" aria-expanded="false" aria-controls="accordionTweet">
-                                        <ion-icon name="reorder-two-outline" class="mr-1 drag-n-drop"></ion-icon>
-                                        <h5 class="fw-bold">Twitter</h5>
-                                    </button>
-                                </h2>
-                                <div id="accordionTweet" class="accordion-collapse collapse" aria-labelledby="tweet" data-bs-parent="#accordionExample">
-                                    <div class="p-3 d-flex align-items-center switch-tweet d-none">
-                                        <div class="switch__container">
-                                            <input id="switch-tweet" class="switch switch--shadow" type="checkbox" checked />
-                                            <label for="switch-tweet"></label>
-                                        </div>
-                                        <p class="mb-0">Mostrar Tweet</p>
-                                    </div>
-                                    <div class="accordion-body section-tweet">
-                                        <div class="d-flex justify-between align-items-center my-4" data-element="tweet">
-                                            <div class="form-floating w-100">
-                                                <input type="email" class="form-control" id="beacons-tweet" placeholder="name@example.com">
-                                                <label for="beacons-tweet">Tweet</label>
-                                                <div id="youtubelHelp" class="form-text">
-                                                    @username
-                                                </div>
-                                            </div>
-                                            <ion-icon class="add-tweet" name="add-circle-outline" size="large"></ion-icon>
+                    <li class="accordion-item">
+                        <a href="#" class="uk-accordion-title">Twitter</a>
+                        <div class="uk-accordion-content uk-padding uk-background-default">
+                            <div class="p-3 uk-flex uk-flex-middle switch-tweet uk-hidden">
+                                <div class="switch__container">
+                                    <input id="switch-tweet" class="switch switch--shadow" type="checkbox" checked />
+                                    <label for="switch-tweet"></label>
+                                </div>
+                                <p class="mb-0">Mostrar Tweet</p>
+                            </div>
+                            <div class="accordion-body section-tweet">
+                                <div class="uk-flex uk-flex-middle uk-flex-between my-4" data-element="tweet">
+                                    <div class="uk-margin">
+                                        <label for="beacons-tweet" class="uk-form-label">Tweet</label>
+                                        <div class="uk-form-controls">
+                                            <input type="email" class="uk-input" id="beacons-tweet" placeholder="@username">
                                         </div>
                                     </div>
+                                    <button class="uk-button uk-button-secondary add-tweet">Adicionar</button>
                                 </div>
                             </div>
                         </div>
+                        <hr class="uk-divider-icon">
+                    </li>
 
-                        <!-- VIDEO -->
-                        <div class="card-element" draggable="true">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="video">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionVideo" aria-expanded="false" aria-controls="accordionVideo">
-                                        <ion-icon name="reorder-two-outline" class="mr-1 drag-n-drop"></ion-icon>
-                                        <h5 class="fw-bold">Vídeo</h5>
-                                    </button>
-                                </h2>
-                                <div id="accordionVideo" class="accordion-collapse collapse" aria-labelledby="video" data-bs-parent="#accordionExample">
-                                    <div class="p-3 d-flex align-items-center switch-video d-none">
-                                        <div class="switch__container">
-                                            <input id="switch-video" class="switch switch--shadow" type="checkbox" checked />
-                                            <label for="switch-video"></label>
-                                        </div>
-                                        <p class="mb-0">Mostrar Vídeo</p>
-                                    </div>
-                                    <div class="accordion-body section-video">
-                                        <div class="d-flex justify-between align-items-center my-4" data-element="video">
-                                            <div class="form-floating w-100">
-                                                <input type="text" class="form-control" id="beacons-video" placeholder="YpkTADgjBas">
-                                                <label for="beacons-video">YouTube</label>
-                                                <div id="youtubelHelp" class="form-text">
-                                                    Apenas ID. Ex: YpkTADgjBas. Normalmente está após "watch?v=".
-                                                </div>
-                                            </div>
-                                            <ion-icon class="add-video" name="add-circle-outline" size="large"></ion-icon>
+                    <li class="accordion-item">
+                        <a href="#" class="uk-accordion-title">Vídeo</a>
+                        <div class="uk-accordion-content uk-padding uk-background-default">
+                            <div class="uk-flex uk-flex-right">
+                                <div uk-tooltip="Apenas ID. Exemplo YpkTADgjBas .Normalmente está após watch?v=">
+                                    <ion-icon name="information-circle-outline" size="large"></ion-icon>
+                                </div>
+                            </div>
+                            <div class="p-3 uk-flex uk-flex-middle switch-video uk-hidden">
+                                <div class="switch__container">
+                                    <input id="switch-video" class="switch switch--shadow" type="checkbox" checked />
+                                    <label for="switch-video"></label>
+                                </div>
+                                <p class="mb-0">Mostrar Vídeo</p>
+                            </div>
+                            <div class="accordion-body section-video">
+                                <div class="uk-flex uk-flex-middle uk-flex-between my-4" data-element="video">
+                                    <div class="uk-margin">
+                                        <label for="beacons-video" class="uk-form-label">YouTube</label>
+                                        <div class="uk-form-controls">
+                                            <input type="text" class="uk-input" id="beacons-video" placeholder="YpkTADgjBas">
                                         </div>
                                     </div>
+                                    <button class="uk-button uk-button-secondary add-video">Adicionar</button>
                                 </div>
                             </div>
                         </div>
+                        <hr class="uk-divider-icon">
+                    </li>
 
-                        <!-- MUSIC -->
-                        <div class="card-element" draggable="true">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="music">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionMusic" aria-expanded="false" aria-controls="accordionMusic">
-                                        <ion-icon name="reorder-two-outline" class="mr-1 drag-n-drop"></ion-icon>
-                                        <h5 class="fw-bold">Música</h5>
-                                    </button>
-                                </h2>
-                                <div id="accordionMusic" class="accordion-collapse collapse" aria-labelledby="music" data-bs-parent="#accordionExample">
-                                    <div class="p-3 d-flex align-items-center switch-music d-none">
-                                        <div class="switch__container">
-                                            <input id="switch-music" class="switch switch--shadow" type="checkbox" checked />
-                                            <label for="switch-music"></label>
-                                        </div>
-                                        <p class="mb-0">Mostrar plataforma</p>
-                                    </div>
-                                    <div class="accordion-body section-music">
-                                        <div class="d-flex justify-between align-items-center my-4" data-element="music">
-                                            <div class="form-floating w-100">
-                                                <input type="text" class="form-control" id="beacons-music" placeholder="YpkTADgjBas">
-                                                <label for="beacons-music">Música</label>
-                                                <div id="musiclHelp" class="form-text">
-                                                    Copie o código
-                                                    <code>
-                                                            iframe
-                                                        </code>
-                                                    gerado por sua plataforma preferida e cole no campo acima.
-                                                </div>
-                                            </div>
-                                            <ion-icon class="add-music" name="add-circle-outline" size="large"></ion-icon>
+                    <li class="accordion-item">
+                        <a href="#" class="uk-accordion-title">Música</a>
+                        <div class="uk-accordion-content uk-padding uk-background-default">
+                            <div class="uk-flex uk-flex-right">
+                                <div uk-tooltip="Copie o código
+                                            <code>
+                                                iframe
+                                            </code>
+                                            gerado por sua plataforma preferida e cole no campo a seguir.">
+                                    <ion-icon name="information-circle-outline" size="large"></ion-icon>
+                                </div>
+
+                            </div>
+                            <div class="uk-flex uk-flex-middle switch-music uk-hidden">
+                                <div class="switch__container">
+                                    <input id="switch-music" class="switch switch--shadow" type="checkbox" checked />
+                                    <label for="switch-music"></label>
+                                </div>
+                                <p class="mb-0">Mostrar plataforma</p>
+                            </div>
+                            <div class="accordion-body section-music">
+                                <div class="uk-flex uk-flex-middle uk-flex-bottom uk-flex-between" data-element="music">
+                                    <div class="uk-margin-top">
+                                        <label for="beacons-music" class="uk-form-label">Música</label>
+                                        <div class="uk-form-controls">
+                                            <input type="text" class="uk-input" id="beacons-music" placeholder="YpkTADgjBas">
                                         </div>
                                     </div>
+                                    <button class="uk-button uk-button-secondary add-music">Adicionar</button>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                        <hr class="uk-divider-icon">
+                    </li>
+                </ul>
             </div>
         </div>
         <!-- PREVIEW -->
         <div class="preview-grid">
-            <div class="sticky-top">
-                <div class="h-100 d-flex justify-content-center align-items-center">
-                    <div class="border-preview mt-5">
+            <div class="uk-margin-top sticky-top">
+                <div class="uk-height-1-1">
+                    <div class="border-preview uk-margin-auto">
                         <div class="dropzone-preview ">
                             <div class="preview"></div>
                         </div>
@@ -304,8 +281,9 @@
     </div>
 
     <script type="module" src="script.js" defer crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit-icons.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
