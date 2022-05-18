@@ -8,21 +8,34 @@ export default function createLink() {
   const linkName = window.localStorage.getItem('nameLink');
   const linkValue = window.localStorage.getItem('linkHref');
 
-  function createLinkSection(name, value) {
+  const linkValues = [];
+
+  function createLinkSection(values) {
+    console.log(values);
     const section = document.createElement('div');
     const titleSection = document.createElement('h3');
     titleSection.innerHTML = 'Links';
 
-    const linkElement = document.createElement('a');
-    linkElement.classList.add('uk-link-muted');
-    linkElement.href = value;
-    linkElement.setAttribute('target', '_blank');
-    linkElement.innerHTML = name;
+    const links = values.forEach((value) => {
+      const linkElement = document.createElement('a');
+      linkElement.classList.add('uk-link-muted');
+      linkElement.href = value.value;
+      linkElement.setAttribute('target', '_blank');
+      linkElement.innerHTML = value.name;
+    });
 
-    section.appendChild(titleSection);
-    section.appendChild(linkElement);
+    console.log(links);
 
-    createSectionEl('section-links', section);
+    // const linkElement = document.createElement('a');
+    // linkElement.classList.add('uk-link-muted');
+    // linkElement.href = value;
+    // linkElement.setAttribute('target', '_blank');
+    // linkElement.innerHTML = name;
+
+    // section.appendChild(titleSection);
+    // section.appendChild(links);
+
+    // createSectionEl('section-links', section);
 
     nameLink.value = '';
     linkHref.value = '';
@@ -31,11 +44,15 @@ export default function createLink() {
 
   addLink.addEventListener('click', function () {
     if (linkHref.value !== '' && nameLink.value !== '') {
-      window.localStorage.setItem('linkHref', linkHref.value);
-      window.localStorage.setItem('nameLink', nameLink.value);
-      createLinkSection(linkHref.value, nameLink.value);
+      const link = { name: nameLink.value, value: linkHref.value };
+      linkValues.push(link);
+      localStorage.setItem('link', JSON.stringify(linkValues));
 
-      document.location.reload(true);
+      // window.localStorage.setItem('linkHref', linkHref.value);
+      // window.localStorage.setItem('nameLink', nameLink.value);
+      createLinkSection(linkValues);
+
+      // document.location.reload(true);
     }
   });
 
