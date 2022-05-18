@@ -28,6 +28,21 @@ p.user-name {
     text-overflow: ellipsis;
 }
 
+.twitter-badge{
+    background-color: #00acee;
+    padding: 1rem .785rem;
+    border-radius: .25rem;
+    color: #fff!important;
+    font-size: .875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    display: inline-block;
+    margin-right: .5rem;
+    width: 100%;
+    text-align: center;
+}
+
 /* YouTube */
 .video-container {
     overflow: hidden;

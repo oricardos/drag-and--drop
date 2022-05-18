@@ -8,17 +8,19 @@ export default function createEmail() {
 
   // função que cria o elemento
   function createEmailSection(email) {
+    const beaconsSection = document.createElement('div');
     const row = document.createElement('div');
     const leftCol = document.createElement('div');
     const rightCol = document.createElement('div');
     const titleSection = document.createElement('h3');
 
-    row.classList.add('row');
-    leftCol.classList.add('col-2', 'd-flex', 'align-items-center');
-    rightCol.classList.add('col-10');
+    row.classList.add('uk-flex');
+    leftCol.classList.add('uk-flex', 'uk-flex-middle');
+    rightCol.classList.add('uk-margin-left');
     titleSection.innerHTML = 'Email';
 
-    row.appendChild(titleSection);
+    beaconsSection.appendChild(titleSection);
+    beaconsSection.appendChild(row);
     row.appendChild(leftCol);
     row.appendChild(rightCol);
 
@@ -36,7 +38,7 @@ export default function createEmail() {
     leftCol.appendChild(emailElement);
     rightCol.appendChild(emailElement);
 
-    createSectionEl('section-email', row);
+    createSectionEl('section-email', beaconsSection);
   }
 
   addEmail.addEventListener('click', function () {

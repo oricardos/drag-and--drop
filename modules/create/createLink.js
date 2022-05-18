@@ -1,30 +1,50 @@
+import showSections from '../showSections/showSections.js';
 import createSectionEl from './createSectionEl.js';
 
 export default function createLink() {
-  const linkName = document.getElementById('beacons-link-name');
-  const linkValue = document.getElementById('beacons-link-value');
+  const nameLink = document.getElementById('beacons-link-name');
+  const linkHref = document.getElementById('beacons-link-value');
   const addLink = document.querySelector('.add-link');
+  const linkName = window.localStorage.getItem('nameLink');
+  const linkValue = window.localStorage.getItem('linkHref');
 
-  addLink.addEventListener('click', function (evt) {
-    if (linkValue.value !== '' && linkName.value !== '') {
-      const switchTexts = document.querySelector('.switch-links');
-      switchTexts.classList.remove('d-none');
-      switchTexts.classList.add('d-flex');
+  function createLinkSection(name, value) {
+    const section = document.createElement('div');
+    const titleSection = document.createElement('h3');
+    titleSection.innerHTML = 'Links';
 
-      const el = evt.target.parentElement;
-      const section = el.parentElement.classList[1];
+    const linkElement = document.createElement('a');
+    linkElement.classList.add('uk-link-muted');
+    linkElement.href = value;
+    linkElement.setAttribute('target', '_blank');
+    linkElement.innerHTML = name;
 
-      const link = document.createElement('a');
-      link.classList.add('link-primary');
-      link.setAttribute('href', linkValue.value);
-      link.setAttribute('target', '_blank');
-      link.innerHTML = linkName.value;
+    section.appendChild(titleSection);
+    section.appendChild(linkElement);
 
-      createSectionEl(section, link);
+    createSectionEl('section-links', section);
 
-      linkName.value = '';
-      linkValue.value = '';
-      linkName.focus();
+    nameLink.value = '';
+    linkHref.value = '';
+    nameLink.focus();
+  }
+
+  addLink.addEventListener('click', function () {
+    if (linkHref.value !== '' && nameLink.value !== '') {
+      window.localStorage.setItem('linkHref', linkHref.value);
+      window.localStorage.setItem('nameLink', nameLink.value);
+      createLinkSection(linkHref.value, nameLink.value);
+
+      document.location.reload(true);
     }
   });
+
+  if (linkName && linkValue) {
+    const switchTexts = document.querySelector('.switch-links');
+    switchTexts.classList.remove('uk-hidden');
+    switchTexts.classList.add('uk-flex');
+    showSections('#switch-links', '.beacons-section-links');
+
+    createLinkSection(linkName, linkValue);
+  }
 }

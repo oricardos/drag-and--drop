@@ -22,7 +22,7 @@ export default function createTweet() {
       <span class="badge bg-primary">
         <a href="https://twitter.com/${profile}?ref_src=twsrc%5Etfw"
           target="_blank"
-          class="twitter-follow-button text-white text-decoration-none" data-show-count="false">
+          class="twitter-follow-button twitter-badge" data-show-count="false">
             Follow ${profile}
         </a>
       </span>
