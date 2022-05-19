@@ -5,37 +5,27 @@ export default function createLink() {
   const nameLink = document.getElementById('beacons-link-name');
   const linkHref = document.getElementById('beacons-link-value');
   const addLink = document.querySelector('.add-link');
-  const linkName = window.localStorage.getItem('nameLink');
-  const linkValue = window.localStorage.getItem('linkHref');
+
+  const linkdolocalstorage = JSON.parse(localStorage.getItem('link'));
 
   const linkValues = [];
 
   function createLinkSection(values) {
-    console.log(values);
     const section = document.createElement('div');
     const titleSection = document.createElement('h3');
     titleSection.innerHTML = 'Links';
+    section.appendChild(titleSection);  
 
-    const links = values.forEach((value) => {
+    values.forEach((value) => {
       const linkElement = document.createElement('a');
       linkElement.classList.add('uk-link-muted');
       linkElement.href = value.value;
       linkElement.setAttribute('target', '_blank');
       linkElement.innerHTML = value.name;
+    section.appendChild(linkElement);
+
+    createSectionEl('section-links', section);
     });
-
-    console.log(links);
-
-    // const linkElement = document.createElement('a');
-    // linkElement.classList.add('uk-link-muted');
-    // linkElement.href = value;
-    // linkElement.setAttribute('target', '_blank');
-    // linkElement.innerHTML = name;
-
-    // section.appendChild(titleSection);
-    // section.appendChild(links);
-
-    // createSectionEl('section-links', section);
 
     nameLink.value = '';
     linkHref.value = '';
@@ -48,20 +38,18 @@ export default function createLink() {
       linkValues.push(link);
       localStorage.setItem('link', JSON.stringify(linkValues));
 
-      // window.localStorage.setItem('linkHref', linkHref.value);
-      // window.localStorage.setItem('nameLink', nameLink.value);
-      createLinkSection(linkValues);
+      createLinkSection(linkdolocalstorage);
 
       // document.location.reload(true);
     }
   });
 
-  if (linkName && linkValue) {
+  if (linkdolocalstorage) {
     const switchTexts = document.querySelector('.switch-links');
     switchTexts.classList.remove('uk-hidden');
     switchTexts.classList.add('uk-flex');
     showSections('#switch-links', '.beacons-section-links');
 
-    createLinkSection(linkName, linkValue);
+    createLinkSection(linkdolocalstorage);
   }
 }
