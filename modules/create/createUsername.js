@@ -8,7 +8,8 @@ export default function createUsername() {
 
   // função que cria e adiciona os elementos no header
   function createElements(name, username) {
-    const nameElement = document.createElement('h5');
+    const nameElement = document.createElement('h4');
+    nameElement.classList.add('uk-text-bold', 'uk-margin-remove-bottom');
     nameElement.innerHTML = name;
 
     const usernameElement = document.createElement('p');
@@ -17,7 +18,7 @@ export default function createUsername() {
 
     const sectionHeader = document.querySelector('.beacons-section-header');
     const texts = document.createElement('div');
-    texts.classList.add('d-flex', 'flex-column', 'ml-5');
+    texts.classList.add('uk-text-center');
     texts.appendChild(nameElement);
     texts.appendChild(usernameElement);
     sectionHeader.appendChild(texts);
