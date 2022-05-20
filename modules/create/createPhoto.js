@@ -4,10 +4,10 @@ export default function createPhoto(photo) {
   const section = 'section-header';
 
   const row = document.createElement('div');
-  row.classList.add('row');
+  row.classList.add('uk-grid-column-large');
 
   const col = document.createElement('div');
-  col.classList.add('col-12');
+  col.classList.add('uk-grid-row-large');
 
   //criando imagem
   const img = document.createElement('img');
