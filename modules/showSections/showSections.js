@@ -5,10 +5,10 @@ export default function showSections(id, section) {
     if (evt.target.checked) {
       const sectionEl = document.querySelector(section);
       sectionEl.classList.remove('uk-hidden');
-      sectionEl.classList.add('uk-flex');
+      sectionEl.classList.add('uk-block');
     } else {
       const sectionEl = document.querySelector(section);
-      sectionEl.classList.remove('uk-flex');
+      sectionEl.classList.remove('uk-block');
       sectionEl.classList.add('uk-hidden');
     }
   });
