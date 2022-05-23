@@ -6,25 +6,23 @@ export default function createLink() {
   const linkHref = document.getElementById('beacons-link-value');
   const addLink = document.querySelector('.add-link');
 
-  const linkdolocalstorage = JSON.parse(localStorage.getItem('link'));
-
-  const linkValues = [];
+  const localStorageLink = JSON.parse(localStorage.getItem('link')) || [];
 
   function createLinkSection(values) {
     const section = document.createElement('div');
     const titleSection = document.createElement('h3');
     titleSection.innerHTML = 'Links';
-    section.appendChild(titleSection);  
+    section.appendChild(titleSection);
 
     values.forEach((value) => {
       const linkElement = document.createElement('a');
-      linkElement.classList.add('uk-link-muted');
+      linkElement.classList.add('uk-link-muted', 'uk-block');
       linkElement.href = value.value;
       linkElement.setAttribute('target', '_blank');
       linkElement.innerHTML = value.name;
-    section.appendChild(linkElement);
+      section.appendChild(linkElement);
 
-    createSectionEl('section-links', section);
+      createSectionEl('section-links', section);
     });
 
     nameLink.value = '';
@@ -35,21 +33,21 @@ export default function createLink() {
   addLink.addEventListener('click', function () {
     if (linkHref.value !== '' && nameLink.value !== '') {
       const link = { name: nameLink.value, value: linkHref.value };
-      linkValues.push(link);
-      localStorage.setItem('link', JSON.stringify(linkValues));
+      const linkString = JSON.parse(localStorage.getItem('link')) || [];
+      linkString.push(link);
+      localStorage.setItem('link', JSON.stringify(linkString));
 
-      createLinkSection(linkdolocalstorage);
-
-      // document.location.reload(true);
+      document.location.reload(true);
     }
   });
 
-  if (linkdolocalstorage) {
+  if (localStorageLink) {
+    console.log(localStorageLink);
     const switchTexts = document.querySelector('.switch-links');
     switchTexts.classList.remove('uk-hidden');
     switchTexts.classList.add('uk-flex');
     showSections('#switch-links', '.beacons-section-links');
 
-    createLinkSection(linkdolocalstorage);
+    createLinkSection(localStorageLink);
   }
 }

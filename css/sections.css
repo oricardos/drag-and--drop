@@ -29,6 +29,10 @@ p.user-name {
     text-overflow: ellipsis;
 }
 
+.uk-block {
+    display: block;
+}
+
 .twitter-badge{
     background-color: #00acee;
     padding: 1rem .785rem;
