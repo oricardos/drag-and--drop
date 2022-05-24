@@ -2,7 +2,7 @@ export default function changeBackground() {
   const chooseFileSection = document.querySelector('.appearance .chooseFile');
   const chooseUrlSection = document.querySelector('.appearance .chooseUrl');
   const chooseColor = document.querySelector('.appearance .chooseColor');
-  const preview = document.querySelector('.preview');
+  const effect = document.querySelector('.effect');
 
   const background = window.localStorage.getItem('background');
 
@@ -40,21 +40,21 @@ export default function changeBackground() {
 
     if (backgroundFile) {
       window.localStorage.setItem('background', backgroundFile);
-      preview.style.backgroundColor = backgroundFile;
+      effect.style.backgroundColor = backgroundFile;
     } else if (backgroundUrl) {
       window.localStorage.setItem('background', backgroundUrl);
-      preview.style.backgroundImage = `url(${backgroundUrl})`;
+      effect.style.backgroundImage = `url(${backgroundUrl})`;
     } else if (backgroundColor) {
       window.localStorage.setItem('background', backgroundColor);
-      preview.style.backgroundImage = `url(${backgroundColor})`;
+      effect.style.backgroundImage = `url(${backgroundColor})`;
     }
 
     document.location.reload(true);
   });
 
   if (background.startsWith('#')) {
-    preview.style.backgroundColor = background;
+    effect.style.backgroundColor = background;
   } else if (background.startsWith('http')) {
-    preview.style.backgroundImage = `url(${background})`;
+    effect.style.backgroundImage = `url(${background})`;
   }
 }
