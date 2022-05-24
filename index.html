@@ -269,8 +269,8 @@
                             <li class="accordion-item uk-open">
                                 <a class="uk-accordion-title" href="#">Background</a>
                                 <div class="uk-accordion-content uk-padding uk-background-default">
-                                    <div class="accordion-body section-header">
-                                        <div class="uk-flex uk-flex-bottom uk-flex-between" data-element="profile-photo">
+                                    <div class="accordion-body">
+                                        <div class="uk-flex uk-flex-bottom uk-flex-between" data-element="background">
                                             <div class="uk-flex uk-flex-column">
 
                                                 <label class="uk-form-label uk-margin-bottom">Fundo de tela</label>
@@ -307,6 +307,60 @@
                                                         <input type="color" class="uk-input" id="backgroundColor" placeholder="https://www.com">
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <button class="uk-button uk-button-secondary change-background">Adicionar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="accordion-item">
+                                <a class="uk-accordion-title" href="#">Efeitos</a>
+                                <div class="uk-accordion-content uk-padding uk-background-default">
+                                    <div class="accordion-body effects">
+                                        <div class="uk-flex uk-flex-bottom uk-flex-between" data-element="effects">
+                                            <div class="uk-flex uk-flex-column">
+                                                <label class="uk-form-label uk-margin-bottom">Fundo de tela</label>
+
+                                                <div class="uk-margin">
+                                                    <label for="blur">Blur</label>
+                                                    <input id="blur" class="uk-range" type="range" value="0" min="0" max="10" step="1">
+                                                </div>
+
+                                                <div class="uk-margin">
+                                                    <label for="brightness">Brightness</label>
+                                                    <input id="brightness" class="uk-range" type="range" value="100" min="0" max="200" step="1">
+                                                </div>
+
+                                                <div class="uk-margin">
+                                                    <label for="contrast">Contrast</label>
+                                                    <input id="contrast" class="uk-range" type="range" value="100" min="0" max="1000" step="1">
+                                                </div>
+
+                                                <div class="uk-margin">
+                                                    <label for="grayscale">Grayscale</label>
+                                                    <input id="grayscale" class="uk-range" type="range" value="0" min="0" max="100" step="1">
+                                                </div>
+
+                                                <div class="uk-margin">
+                                                    <label for="invert">Invert</label>
+                                                    <input id="invert" class="uk-range" type="range" value="0" min="0" max="100" step="1">
+                                                </div>
+
+                                                <div class="uk-margin">
+                                                    <label for="opacity">Opacity</label>
+                                                    <input id="opacity" class="uk-range" type="range" value="100" min="0" max="100" step="1">
+                                                </div>
+
+                                                <div class="uk-margin">
+                                                    <label for="saturate">Saturate</label>
+                                                    <input id="saturate" class="uk-range" type="range" value="100" min="0" max="1000" step="0.1">
+                                                </div>
+
+                                                <div class="uk-margin">
+                                                    <label for="sepia">Sepia</label>
+                                                    <input id="sepia" class="uk-range" type="range" value="0" min="0" max="100" step="1">
+                                                </div>
+
                                             </div>
                                             <button class="uk-button uk-button-secondary change-background">Adicionar</button>
                                         </div>

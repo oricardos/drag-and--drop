@@ -12,6 +12,7 @@ import createMusic from './modules/create/createMusic.js';
 
 // modulos de aparencia
 import changeBackground from './modules/appearance/changeBackground.js';
+import changeEffect from './modules/appearance/changeEffect.js';
 
 cookie();
 draganddrop();
@@ -27,3 +28,4 @@ createMusic();
 
 // modulos de aparencia
 changeBackground();
+changeEffect();
