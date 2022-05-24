@@ -18,239 +18,304 @@
     <div class="container-grid">
         <div class="main-grid">
             <div class="board">
-                <h2>Elementos</h2>
-
-                <ul class="uk-padding" uk-accordion uk-sortable="handle: .accordion-item">
-                    <li class="accordion-item uk-open">
-                        <a class="uk-accordion-title" href="#">Header</a>
-                        <div class="uk-accordion-content uk-padding uk-background-default">
-                            <div class="accordion-body section-header">
-                                <div class="uk-flex uk-flex-bottom uk-flex-between" data-element="profile-photo">
-                                    <div class="uk-flex uk-flex-column">
-
-                                        <label class="uk-form-label">Foto de Perfil</label>
-
-                                        <div class="btn-group mb-3" role="group" aria-label="Basic radio toggle button group">
-                                            <input type="radio" class="uk-radio" name="btnradio" id="chooseFile" autocomplete="off" checked>
-                                            <label class="uk-margin-right uk-form-label" for="chooseFile">Escolher Arquivo</label>
-
-                                            <input type="radio" class="uk-radio" name="btnradio" id="chooseUrl" autocomplete="off">
-                                            <label class="uk-form-label" for="chooseUrl">URL</label>
-                                        </div>
-
-                                        <div class="chooseFile uk-margin-top uk-flex uk-flex-column">
-                                            <label for="file" class="uk-form-label">Add Arquivo</label>
-                                            <div uk-form-custom="target: true" class="uk-form-controls">
-                                                <input type="file" id="file">
-                                                <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>
-                                            </div>
-                                        </div>
-
-                                        <div class="uk-margin chooseUrl uk-hidden">
-                                            <label for="beacons-link-value" class="uk-form-label">Add URL</label>
-                                            <div class="uk-form-controls">
-                                                <input type="text" class="uk-input" id="url" placeholder="https://www.com">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button class="uk-button uk-button-secondary add-profilephoto">Adicionar</button>
-                                </div>
-
-                                <hr class="uk-divider-small uk-margin">
-
-                                <div class="uk-flex uk-flex-between uk-flex-bottom uk-width-1-1" data-element="user-name">
-                                    <div class="uk-flex uk-flex-column align-items-start">
-                                        <div class="uk-margin">
-                                            <label for="beacons-name" class="uk-form-label">Nome</label>
-                                            <div class="uk-forms-controls">
-                                                <input type="text" class="uk-input" id="beacons-name" placeholder="Insira seu nome">
-                                            </div>
-                                        </div>
-
-                                        <div class="uk-margin-top">
-                                            <label for="beacons-user-name" class="uk-form-label">Username</label>
-                                            <div class="uk-forms-controls">
-                                                <input type="text" class="uk-input" id="beacons-user-name" placeholder="Insira seu username">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button class="uk-button uk-button-secondary add-username">Adicionar</button>
-                                </div>
-                            </div>
-                        </div>
-                        <hr class="uk-divider-icon">
-                    </li>
-                    <li class="accordion-item">
-                        <a class="uk-accordion-title" href="#">Textos</a>
-                        <div class="uk-accordion-content uk-padding uk-background-default">
-                            <div class="uk-flex-middle switch-texts uk-hidden">
-                                <div class="switch__container">
-                                    <input id="switch-texts" class="switch switch--shadow" type="checkbox" checked />
-                                    <label for="switch-texts"></label>
-                                </div>
-                                <p class="mb-0">Mostrar Textos</p>
-                            </div>
-                            <div class="accordion-body section-text">
-                                <div class="uk-flex justify-between uk-flex-bottom my-4" data-element="bio">
-                                    <div class="uk-width-1-1">
-                                        <label for="beacons-bio" class="uk-form-label">Bio</label>
-                                        <div class="uk-form-controls">
-                                            <textarea class="uk-textarea uk-form-width-large" rows="5" id="beacons-bio"></textarea>
-                                        </div>
-
-                                    </div>
-                                    <button class="uk-button uk-button-secondary add-bio">Adicionar</button>
-                                </div>
-                            </div>
-                        </div>
-                        <hr class="uk-divider-icon">
-                    </li>
-
-                    <li class="accordion-item">
-                        <a href="#" class="uk-accordion-title">Links</a>
-                        <div class="uk-accordion-content uk-padding uk-background-default">
-                            <div class="uk-flex uk-flex-middle switch-links uk-hidden">
-                                <div class="switch__container">
-                                    <input id="switch-links" class="switch switch--shadow" type="checkbox" checked />
-                                    <label for="switch-links"></label>
-                                </div>
-                                <p class="mb-0">Mostrar Links</p>
-                            </div>
-                            <div class="accordion-body section-links">
-                                <div class="uk-flex uk-flex-between uk-flex-bottom my-4" data-element="links">
-                                    <div>
-                                        <div class="uk-margin">
-                                            <label for="beacons-link-name" class="uk-form-label">Nome do Link</label>
-                                            <div class="uk-form-controls">
-                                                <input type="text" class="uk-input" id="beacons-link-name" placeholder="Dê um nome para o seu link">
-                                            </div>
-
-                                        </div>
-                                        <div class="uk-margin-top">
-                                            <label for="beacons-link-value" class="uk-form-label">Link</label>
-                                            <div class="uk-form-controls">
-                                                <input type="text" class="uk-input" id="beacons-link-value" placeholder="https://www.com">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button class="uk-button uk-button-secondary add-link">Adicionar</button>
-                                </div>
-                            </div>
-                        </div>
-                        <hr class="uk-divider-icon">
-                    </li>
-
-                    <li class="accordion-item">
-                        <a href="#" class="uk-accordion-title">Email</a>
-                        <div class="uk-accordion-content uk-padding uk-background-default">
-                            <div class="uk-flex uk-flex-middle switch-email uk-hidden">
-                                <div class="switch__container">
-                                    <input id="switch-email" class="switch switch--shadow" type="checkbox" checked />
-                                    <label for="switch-email"></label>
-                                </div>
-                                <p class="mb-0">Mostrar Email</p>
-                            </div>
-                            <div class="accordion-body section-email">
-                                <div class="uk-flex uk-flex-middle uk-flex-between my-4" data-element="email">
-                                    <div class="uk-margin">
-                                        <label for="beacons-email" class="uk-form-label uk-text-default">Email</label>
-                                        <div class="uk-form-controls">
-                                            <input type="email" class="uk-input" id="beacons-email" placeholder="name@example.com">
-                                        </div>
-                                    </div>
-                                    <button class="uk-button uk-button-secondary add-email">Adicionar</button>
-                                </div>
-                            </div>
-                        </div>
-                        <hr class="uk-divider-icon">
-                    </li>
-
-                    <li class="accordion-item">
-                        <a href="#" class="uk-accordion-title">Twitter</a>
-                        <div class="uk-accordion-content uk-padding uk-background-default">
-                            <div class="p-3 uk-flex uk-flex-middle switch-tweet uk-hidden">
-                                <div class="switch__container">
-                                    <input id="switch-tweet" class="switch switch--shadow" type="checkbox" checked />
-                                    <label for="switch-tweet"></label>
-                                </div>
-                                <p class="mb-0">Mostrar Tweet</p>
-                            </div>
-                            <div class="accordion-body section-tweet">
-                                <div class="uk-flex uk-flex-middle uk-flex-between my-4" data-element="tweet">
-                                    <div class="uk-margin">
-                                        <label for="beacons-tweet" class="uk-form-label">Tweet</label>
-                                        <div class="uk-form-controls">
-                                            <input type="email" class="uk-input" id="beacons-tweet" placeholder="@username">
-                                        </div>
-                                    </div>
-                                    <button class="uk-button uk-button-secondary add-tweet">Adicionar</button>
-                                </div>
-                            </div>
-                        </div>
-                        <hr class="uk-divider-icon">
-                    </li>
-
-                    <li class="accordion-item">
-                        <a href="#" class="uk-accordion-title">Vídeo</a>
-                        <div class="uk-accordion-content uk-padding uk-background-default">
-                            <div class="uk-flex uk-flex-right">
-                                <div uk-tooltip="Adicione vídeo do YouTube, Instagram (Reels), TikTok ou Vimeo.">
-                                    <ion-icon name="information-circle-outline" size="large"></ion-icon>
-                                </div>
-                            </div>
-                            <div class="p-3 uk-flex uk-flex-middle switch-video uk-hidden">
-                                <div class="switch__container">
-                                    <input id="switch-video" class="switch switch--shadow" type="checkbox" checked />
-                                    <label for="switch-video"></label>
-                                </div>
-                                <p class="mb-0">Mostrar Vídeo</p>
-                            </div>
-                            <div class="accordion-body section-video">
-                                <div class="uk-flex uk-flex-middle uk-flex-between my-4" data-element="video">
-                                    <div class="uk-margin">
-                                        <label for="beacons-video" class="uk-form-label">Vídeo</label>
-                                        <div class="uk-form-controls">
-                                            <input type="text" class="uk-input" id="beacons-video" placeholder="YpkTADgjBas">
-                                        </div>
-                                    </div>
-                                    <button class="uk-button uk-button-secondary add-video">Adicionar</button>
-                                </div>
-                            </div>
-                        </div>
-                        <hr class="uk-divider-icon">
-                    </li>
-
-                    <li class="accordion-item">
-                        <a href="#" class="uk-accordion-title">Música</a>
-                        <div class="uk-accordion-content uk-padding uk-background-default">
-                            <div class="uk-flex uk-flex-right">
-                                <div uk-tooltip="Copie o <code>iframe</code> gerado pelo Spotify ou Deezer e cole no campo a seguir.">
-                                    <ion-icon name="information-circle-outline" size="large"></ion-icon>
-                                </div>
-
-                            </div>
-                            <div class="uk-flex uk-flex-middle switch-music uk-hidden">
-                                <div class="switch__container">
-                                    <input id="switch-music" class="switch switch--shadow" type="checkbox" checked />
-                                    <label for="switch-music"></label>
-                                </div>
-                                <p class="mb-0">Mostrar plataforma</p>
-                            </div>
-                            <div class="accordion-body section-music">
-                                <div class="uk-flex uk-flex-middle uk-flex-bottom uk-flex-between" data-element="music">
-                                    <div class="uk-margin-top">
-                                        <label for="beacons-music" class="uk-form-label">Música</label>
-                                        <div class="uk-form-controls">
-                                            <input type="text" class="uk-input" id="beacons-music" placeholder="YpkTADgjBas">
-                                        </div>
-                                    </div>
-                                    <button class="uk-button uk-button-secondary add-music">Adicionar</button>
-                                </div>
-                            </div>
-                        </div>
-                        <hr class="uk-divider-icon">
-                    </li>
+                <!-- tabs menu-->
+                <ul class="uk-tab" data-uk-tab="{connect:'#tab-id'}">
+                    <li><a href="">Conteúdo</a></li>
+                    <li><a href="">Aparência</a></li>
                 </ul>
+
+                <div id="tab-id" class="uk-switcher uk-margin">
+                    <!-- tab conteudo -->
+                    <li>
+                        <a href="#" id="autoplayer" data-uk-switcher-item="next"></a>
+                        <h2>Conteúdo</h2>
+
+                        <ul class="uk-padding content" uk-accordion uk-sortable="handle: .accordion-item">
+                            <li class="accordion-item uk-open">
+                                <a class="uk-accordion-title" href="#">Header</a>
+                                <div class="uk-accordion-content uk-padding uk-background-default">
+                                    <div class="accordion-body section-header">
+                                        <div class="uk-flex uk-flex-bottom uk-flex-between" data-element="profile-photo">
+                                            <div class="uk-flex uk-flex-column">
+
+                                                <label class="uk-form-label uk-margin-bottom">Foto de Perfil</label>
+
+                                                <div class="btn-group mb-3" role="group" aria-label="Basic radio toggle button group">
+                                                    <input type="radio" class="uk-radio" name="btnradio" id="chooseFile" autocomplete="off" checked>
+                                                    <label class="uk-margin-right uk-form-label" for="chooseFile">Escolher Arquivo</label>
+
+                                                    <input type="radio" class="uk-radio" name="btnradio" id="chooseUrl" autocomplete="off">
+                                                    <label class="uk-form-label" for="chooseUrl">URL</label>
+                                                </div>
+
+                                                <div class="chooseFile uk-margin-top uk-flex uk-flex-column">
+                                                    <label for="file" class="uk-form-label">Add Arquivo</label>
+                                                    <div uk-form-custom="target: true" class="uk-form-controls">
+                                                        <input type="file" id="file">
+                                                        <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>
+                                                    </div>
+                                                </div>
+
+                                                <div class="uk-margin chooseUrl uk-hidden">
+                                                    <label for="beacons-link-value" class="uk-form-label">Add URL</label>
+                                                    <div class="uk-form-controls">
+                                                        <input type="text" class="uk-input" id="url" placeholder="https://www.com">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="uk-button uk-button-secondary add-profilephoto">Adicionar</button>
+                                        </div>
+
+                                        <hr class="uk-divider-small uk-margin">
+
+                                        <div class="uk-flex uk-flex-between uk-flex-bottom uk-width-1-1" data-element="user-name">
+                                            <div class="uk-flex uk-flex-column align-items-start">
+                                                <div class="uk-margin">
+                                                    <label for="beacons-name" class="uk-form-label">Nome</label>
+                                                    <div class="uk-forms-controls">
+                                                        <input type="text" class="uk-input" id="beacons-name" placeholder="Insira seu nome">
+                                                    </div>
+                                                </div>
+
+                                                <div class="uk-margin-top">
+                                                    <label for="beacons-user-name" class="uk-form-label">Username</label>
+                                                    <div class="uk-forms-controls">
+                                                        <input type="text" class="uk-input" id="beacons-user-name" placeholder="Insira seu username">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="uk-button uk-button-secondary add-username">Adicionar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="uk-divider-icon">
+                            </li>
+                            <li class="accordion-item">
+                                <a class="uk-accordion-title" href="#">Textos</a>
+                                <div class="uk-accordion-content uk-padding uk-background-default">
+                                    <div class="uk-flex-middle switch-texts uk-hidden">
+                                        <div class="switch__container">
+                                            <input id="switch-texts" class="switch switch--shadow" type="checkbox" checked />
+                                            <label for="switch-texts"></label>
+                                        </div>
+                                        <p class="mb-0">Mostrar Textos</p>
+                                    </div>
+                                    <div class="accordion-body section-text">
+                                        <div class="uk-flex justify-between uk-flex-bottom my-4" data-element="bio">
+                                            <div class="uk-width-1-1">
+                                                <label for="beacons-bio" class="uk-form-label">Bio</label>
+                                                <div class="uk-form-controls">
+                                                    <textarea class="uk-textarea uk-form-width-large" rows="5" id="beacons-bio"></textarea>
+                                                </div>
+
+                                            </div>
+                                            <button class="uk-button uk-button-secondary add-bio">Adicionar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="uk-divider-icon">
+                            </li>
+
+                            <li class="accordion-item">
+                                <a href="#" class="uk-accordion-title">Links</a>
+                                <div class="uk-accordion-content uk-padding uk-background-default">
+                                    <div class="uk-flex uk-flex-middle switch-links uk-hidden">
+                                        <div class="switch__container">
+                                            <input id="switch-links" class="switch switch--shadow" type="checkbox" checked />
+                                            <label for="switch-links"></label>
+                                        </div>
+                                        <p class="mb-0">Mostrar Links</p>
+                                    </div>
+                                    <div class="accordion-body section-links">
+                                        <div class="uk-flex uk-flex-between uk-flex-bottom my-4" data-element="links">
+                                            <div>
+                                                <div class="uk-margin">
+                                                    <label for="beacons-link-name" class="uk-form-label">Nome do Link</label>
+                                                    <div class="uk-form-controls">
+                                                        <input type="text" class="uk-input" id="beacons-link-name" placeholder="Dê um nome para o seu link">
+                                                    </div>
+
+                                                </div>
+                                                <div class="uk-margin-top">
+                                                    <label for="beacons-link-value" class="uk-form-label">Link</label>
+                                                    <div class="uk-form-controls">
+                                                        <input type="text" class="uk-input" id="beacons-link-value" placeholder="https://www.com">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="uk-button uk-button-secondary add-link">Adicionar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="uk-divider-icon">
+                            </li>
+
+                            <li class="accordion-item">
+                                <a href="#" class="uk-accordion-title">Email</a>
+                                <div class="uk-accordion-content uk-padding uk-background-default">
+                                    <div class="uk-flex uk-flex-middle switch-email uk-hidden">
+                                        <div class="switch__container">
+                                            <input id="switch-email" class="switch switch--shadow" type="checkbox" checked />
+                                            <label for="switch-email"></label>
+                                        </div>
+                                        <p class="mb-0">Mostrar Email</p>
+                                    </div>
+                                    <div class="accordion-body section-email">
+                                        <div class="uk-flex uk-flex-middle uk-flex-between my-4" data-element="email">
+                                            <div class="uk-margin">
+                                                <label for="beacons-email" class="uk-form-label uk-text-default">Email</label>
+                                                <div class="uk-form-controls">
+                                                    <input type="email" class="uk-input" id="beacons-email" placeholder="name@example.com">
+                                                </div>
+                                            </div>
+                                            <button class="uk-button uk-button-secondary add-email">Adicionar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="uk-divider-icon">
+                            </li>
+
+                            <li class="accordion-item">
+                                <a href="#" class="uk-accordion-title">Twitter</a>
+                                <div class="uk-accordion-content uk-padding uk-background-default">
+                                    <div class="p-3 uk-flex uk-flex-middle switch-tweet uk-hidden">
+                                        <div class="switch__container">
+                                            <input id="switch-tweet" class="switch switch--shadow" type="checkbox" checked />
+                                            <label for="switch-tweet"></label>
+                                        </div>
+                                        <p class="mb-0">Mostrar Tweet</p>
+                                    </div>
+                                    <div class="accordion-body section-tweet">
+                                        <div class="uk-flex uk-flex-middle uk-flex-between my-4" data-element="tweet">
+                                            <div class="uk-margin">
+                                                <label for="beacons-tweet" class="uk-form-label">Tweet</label>
+                                                <div class="uk-form-controls">
+                                                    <input type="email" class="uk-input" id="beacons-tweet" placeholder="@username">
+                                                </div>
+                                            </div>
+                                            <button class="uk-button uk-button-secondary add-tweet">Adicionar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="uk-divider-icon">
+                            </li>
+
+                            <li class="accordion-item">
+                                <a href="#" class="uk-accordion-title">Vídeo</a>
+                                <div class="uk-accordion-content uk-padding uk-background-default">
+                                    <div class="uk-flex uk-flex-right">
+                                        <div uk-tooltip="Adicione vídeo do YouTube, Instagram (Reels), TikTok ou Vimeo.">
+                                            <ion-icon name="information-circle-outline" size="large"></ion-icon>
+                                        </div>
+                                    </div>
+                                    <div class="p-3 uk-flex uk-flex-middle switch-video uk-hidden">
+                                        <div class="switch__container">
+                                            <input id="switch-video" class="switch switch--shadow" type="checkbox" checked />
+                                            <label for="switch-video"></label>
+                                        </div>
+                                        <p class="mb-0">Mostrar Vídeo</p>
+                                    </div>
+                                    <div class="accordion-body section-video">
+                                        <div class="uk-flex uk-flex-middle uk-flex-between my-4" data-element="video">
+                                            <div class="uk-margin">
+                                                <label for="beacons-video" class="uk-form-label">Vídeo</label>
+                                                <div class="uk-form-controls">
+                                                    <input type="text" class="uk-input" id="beacons-video" placeholder="YpkTADgjBas">
+                                                </div>
+                                            </div>
+                                            <button class="uk-button uk-button-secondary add-video">Adicionar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="uk-divider-icon">
+                            </li>
+
+                            <li class="accordion-item">
+                                <a href="#" class="uk-accordion-title">Música</a>
+                                <div class="uk-accordion-content uk-padding uk-background-default">
+                                    <div class="uk-flex uk-flex-right">
+                                        <div uk-tooltip="Copie o <code>iframe</code> gerado pelo Spotify ou Deezer e cole no campo a seguir.">
+                                            <ion-icon name="information-circle-outline" size="large"></ion-icon>
+                                        </div>
+
+                                    </div>
+                                    <div class="uk-flex uk-flex-middle switch-music uk-hidden">
+                                        <div class="switch__container">
+                                            <input id="switch-music" class="switch switch--shadow" type="checkbox" checked />
+                                            <label for="switch-music"></label>
+                                        </div>
+                                        <p class="mb-0">Mostrar plataforma</p>
+                                    </div>
+                                    <div class="accordion-body section-music">
+                                        <div class="uk-flex uk-flex-middle uk-flex-bottom uk-flex-between" data-element="music">
+                                            <div class="uk-margin-top">
+                                                <label for="beacons-music" class="uk-form-label">Música</label>
+                                                <div class="uk-form-controls">
+                                                    <input type="text" class="uk-input" id="beacons-music" placeholder="YpkTADgjBas">
+                                                </div>
+                                            </div>
+                                            <button class="uk-button uk-button-secondary add-music">Adicionar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="uk-divider-icon">
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- tab aparencia -->
+                    <li>
+                        <h2>Aparência</h2>
+                        <ul class="uk-padding appearance" uk-accordion>
+                            <li class="accordion-item uk-open">
+                                <a class="uk-accordion-title" href="#">Background</a>
+                                <div class="uk-accordion-content uk-padding uk-background-default">
+                                    <div class="accordion-body section-header">
+                                        <div class="uk-flex uk-flex-bottom uk-flex-between" data-element="profile-photo">
+                                            <div class="uk-flex uk-flex-column">
+
+                                                <label class="uk-form-label uk-margin-bottom">Fundo de tela</label>
+
+                                                <div class="btn-group mb-3" role="group" aria-label="Basic radio toggle button group">
+                                                    <input type="radio" class="uk-radio" name="btnradio" id="chooseFile" autocomplete="off" checked>
+                                                    <label class="uk-form-label uk-margin-small-right" for="chooseFile">Escolher Arquivo</label>
+
+                                                    <input type="radio" class="uk-radio" name="btnradio" id="chooseUrl" autocomplete="off">
+                                                    <label class="uk-form-label uk-margin-small-right" for="chooseUrl">URL</label>
+
+                                                    <input type="radio" class="uk-radio" name="btnradio" id="chooseColor" autocomplete="off">
+                                                    <label class="uk-form-label" for="chooseUrl">Cor</label>
+                                                </div>
+
+                                                <div class="chooseFile uk-margin-top uk-flex uk-flex-column">
+                                                    <label for="backgroundFile" class="uk-form-label">Add Arquivo</label>
+                                                    <div uk-form-custom="target: true" class="uk-form-controls">
+                                                        <input type="file" id="backgroundFile">
+                                                        <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>
+                                                    </div>
+                                                </div>
+
+                                                <div class="uk-margin chooseUrl uk-hidden">
+                                                    <label for="backgroundUrl" class="uk-form-label">Add URL</label>
+                                                    <div class="uk-form-controls">
+                                                        <input type="text" class="uk-input" id="backgroundUrl" placeholder="https://www.com">
+                                                    </div>
+                                                </div>
+
+                                                <div class="uk-margin chooseColor uk-hidden">
+                                                    <label for="backgroundColor" class="uk-form-label">Escolher Cor</label>
+                                                    <div class="uk-form-controls">
+                                                        <input type="color" class="uk-input" id="backgroundColor" placeholder="https://www.com">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="uk-button uk-button-secondary change-background">Adicionar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </div>
             </div>
         </div>
         <!-- PREVIEW -->
@@ -259,6 +324,7 @@
                 <div class="uk-height-1-1">
                     <div class="border-preview uk-margin-auto">
                         <div class="dropzone-preview ">
+                            <div class="effect"></div>
                             <div class="preview"></div>
                         </div>
                     </div>

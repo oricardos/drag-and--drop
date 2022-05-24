@@ -42,7 +42,6 @@ export default function createLink() {
   });
 
   if (localStorageLink) {
-    console.log(localStorageLink);
     const switchTexts = document.querySelector('.switch-links');
     switchTexts.classList.remove('uk-hidden');
     switchTexts.classList.add('uk-flex');

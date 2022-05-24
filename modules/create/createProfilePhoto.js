@@ -11,7 +11,7 @@ export default function createProfilePhoto() {
   const photo = document.getElementById('file');
   const addProfilePhoto = document.querySelector('.add-profilephoto');
 
-  const choosesBtns = document.querySelectorAll('.uk-radio');
+  const choosesBtns = document.querySelectorAll('.content .uk-radio');
   choosesBtns.forEach((choose) => {
     choose.addEventListener('click', function (evt) {
       const el = evt.target;
