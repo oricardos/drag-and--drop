@@ -1,6 +1,7 @@
 @import './sections.css';
 @import './cookies.css';
 @import './switch.css';
+@import './preview.css';
 
 * {
     margin: 0;

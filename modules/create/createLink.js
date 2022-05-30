@@ -16,7 +16,7 @@ export default function createLink() {
 
     values.forEach((value) => {
       const linkElement = document.createElement('a');
-      linkElement.classList.add('uk-link-muted', 'uk-block');
+      linkElement.classList.add('uk-block');
       linkElement.href = value.value;
       linkElement.setAttribute('target', '_blank');
       linkElement.innerHTML = value.name;
