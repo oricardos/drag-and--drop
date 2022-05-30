@@ -1,5 +1,6 @@
 import cookie from './modules/cookie.js';
 import draganddrop from './modules/draganddrop.js';
+
 // modulos de criacao
 import createProfilePhoto from './modules/create/createProfilePhoto.js';
 import createUsername from './modules/create/createUsername.js';
@@ -17,6 +18,7 @@ import changeFont from './modules/appearance/changeFont.js';
 
 cookie();
 draganddrop();
+
 // modulos de criacao
 createProfilePhoto();
 createUsername();
