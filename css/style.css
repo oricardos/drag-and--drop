@@ -9,6 +9,10 @@
     box-sizing: border-box;
 }
 
+h2.title {
+    margin:  40px;
+}
+
 h5 {
     margin-bottom: 0!important;
 }
