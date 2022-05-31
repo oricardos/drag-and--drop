@@ -1,7 +1,7 @@
 export default function changeBackground() {
-  const chooseFileSection = document.querySelector('.appearance .chooseFile');
-  const chooseUrlSection = document.querySelector('.appearance .chooseUrl');
-  const chooseColor = document.querySelector('.appearance .chooseColor');
+  const chooseFileSection = document.querySelector('.appearance .chooseFileBg');
+  const chooseUrlSection = document.querySelector('.appearance .chooseUrlBg');
+  const chooseColor = document.querySelector('.appearance .chooseColorBg');
   const effect = document.querySelector('.effect');
 
   const background = window.localStorage.getItem('background');
@@ -15,20 +15,20 @@ export default function changeBackground() {
   choosesBtns.forEach((choose) => {
     choose.addEventListener('click', function (evt) {
       const el = evt.target;
-      if (el.id === 'chooseFile') {
+      if (el.id === 'chooseFileBg') {
         chooseFileSection.classList.remove('uk-hidden');
         chooseUrlSection.classList.add('uk-hidden');
         chooseColor.classList.add('uk-hidden');
       }
-      if (el.id === 'chooseUrl') {
-        chooseFileSection.classList.add('uk-hidden');
+      if (el.id === 'chooseUrlBg') {
         chooseUrlSection.classList.remove('uk-hidden');
+        chooseFileSection.classList.add('uk-hidden');
         chooseColor.classList.add('uk-hidden');
       }
-      if (el.id === 'chooseColor') {
+      if (el.id === 'chooseColorBg') {
+        chooseColor.classList.remove('uk-hidden');
         chooseFileSection.classList.add('uk-hidden');
         chooseUrlSection.classList.add('uk-hidden');
-        chooseColor.classList.remove('uk-hidden');
       }
     });
   });

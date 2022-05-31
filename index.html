@@ -275,17 +275,19 @@
                                                 <label class="uk-form-label uk-margin-bottom">Fundo de tela</label>
 
                                                 <div class="btn-group mb-3" role="group" aria-label="Basic radio toggle button group">
-                                                    <input type="radio" class="uk-radio" name="btnradio" id="chooseFile" autocomplete="off" checked>
-                                                    <label class="uk-form-label uk-margin-small-right" for="chooseFile">Escolher Arquivo</label>
+                                                    <form>
+                                                        <input type="radio" class="uk-radio" name="btnradio" id="chooseFileBg" autocomplete="off" checked>
+                                                        <label class="uk-form-label uk-margin-small-right" for="chooseFileBg">Escolher Arquivo</label>
 
-                                                    <input type="radio" class="uk-radio" name="btnradio" id="chooseUrl" autocomplete="off">
-                                                    <label class="uk-form-label uk-margin-small-right" for="chooseUrl">URL</label>
+                                                        <input type="radio" class="uk-radio" name="btnradio" id="chooseUrlBg" autocomplete="off">
+                                                        <label class="uk-form-label uk-margin-small-right" for="chooseUrlBg">URL</label>
 
-                                                    <input type="radio" class="uk-radio" name="btnradio" id="chooseColor" autocomplete="off">
-                                                    <label class="uk-form-label" for="chooseUrl">Cor</label>
+                                                        <input type="radio" class="uk-radio" name="btnradio" id="chooseColorBg" autocomplete="off">
+                                                        <label class="uk-form-label" for="chooseColorBg">Cor</label>
+                                                    </form>
                                                 </div>
 
-                                                <div class="chooseFile uk-margin-top uk-flex uk-flex-column">
+                                                <div class="chooseFileBg uk-margin-top uk-flex uk-flex-column">
                                                     <label for="backgroundFile" class="uk-form-label">Add Arquivo</label>
                                                     <div uk-form-custom="target: true" class="uk-form-controls">
                                                         <input type="file" id="backgroundFile">
@@ -293,14 +295,14 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="uk-margin chooseUrl uk-hidden">
+                                                <div class="chooseUrlBg uk-margin uk-hidden">
                                                     <label for="backgroundUrl" class="uk-form-label">Add URL</label>
                                                     <div class="uk-form-controls">
                                                         <input type="text" class="uk-input" id="backgroundUrl" placeholder="https://www.com">
                                                     </div>
                                                 </div>
 
-                                                <div class="uk-margin chooseColor uk-hidden">
+                                                <div class="chooseColorBg uk-margin uk-hidden">
                                                     <label for="backgroundColor" class="uk-form-label">Escolher Cor</label>
                                                     <div class="uk-form-controls">
                                                         <input type="color" class="uk-input" id="backgroundColor" placeholder="https://www.com">
