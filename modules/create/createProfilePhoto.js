@@ -1,4 +1,3 @@
-import previewProfilePhoto from '../preview/previewProfilePhoto.js';
 import createPhoto from './createPhoto.js';
 
 export default function createProfilePhoto() {

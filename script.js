@@ -1,3 +1,4 @@
+import preview from './preview.js';
 import cookie from './modules/cookie.js';
 import draganddrop from './modules/draganddrop.js';
 
@@ -16,6 +17,7 @@ import changeBackground from './modules/appearance/changeBackground.js';
 import changeEffect from './modules/appearance/changeEffect.js';
 import changeFont from './modules/appearance/changeFont.js';
 
+preview();
 cookie();
 draganddrop();
 
