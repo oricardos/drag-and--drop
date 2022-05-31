@@ -13,6 +13,12 @@ h2.title {
     margin:  40px;
 }
 
+h2.title,
+.main-grid,
+button.btn-preview {
+    font-family: 'Rubik', sans-serif;
+}
+
 h5 {
     margin-bottom: 0!important;
 }
