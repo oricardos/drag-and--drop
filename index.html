@@ -48,15 +48,15 @@
                                                     <label class="uk-form-label" for="chooseUrl">URL</label>
                                                 </div>
 
-                                                <div class="chooseFile uk-margin-top uk-flex uk-flex-column">
+                                                <div class="chooseFile uk-margin-top">
                                                     <label for="file" class="uk-form-label">Add Arquivo</label>
                                                     <div uk-form-custom="target: true" class="uk-form-controls">
                                                         <input type="file" id="file">
-                                                        <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>
+                                                        <input class="uk-input" type="text" placeholder="Clique para selecionar um arquivo" disabled>
                                                     </div>
                                                 </div>
 
-                                                <div class="uk-margin chooseUrl uk-hidden">
+                                                <div class="chooseUrl uk-margin-top uk-hidden">
                                                     <label for="beacons-link-value" class="uk-form-label">Add URL</label>
                                                     <div class="uk-form-controls">
                                                         <input type="text" class="uk-input" id="url" placeholder="https://www.com">
@@ -66,7 +66,7 @@
                                             <button class="uk-button uk-button-secondary add-profilephoto">Adicionar</button>
                                         </div>
 
-                                        <hr class="uk-divider-small uk-margin">
+                                        <hr>
 
                                         <div class="input-flex uk-width-1-1" data-element="user-name">
                                             <div class="uk-flex uk-flex-column align-items-start">
@@ -272,7 +272,6 @@
                                     <div class="accordion-body">
                                         <div class="input-flex" data-element="background">
                                             <div class="uk-flex uk-flex-column">
-
                                                 <label class="uk-form-label uk-margin-bottom">Fundo de tela</label>
 
                                                 <div class="btn-group mb-3" role="group" aria-label="Basic radio toggle button group">
@@ -288,7 +287,7 @@
                                                     </form>
                                                 </div>
 
-                                                <div class="chooseFileBg uk-margin-top uk-flex uk-flex-column">
+                                                <div class="chooseFileBg uk-margin-top">
                                                     <label for="backgroundFile" class="uk-form-label">Add Arquivo</label>
                                                     <div uk-form-custom="target: true" class="uk-form-controls">
                                                         <input type="file" id="backgroundFile">
@@ -296,14 +295,14 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="chooseUrlBg uk-margin uk-hidden">
+                                                <div class="chooseUrlBg uk-margin-top uk-hidden">
                                                     <label for="backgroundUrl" class="uk-form-label">Add URL</label>
                                                     <div class="uk-form-controls">
                                                         <input type="text" class="uk-input" id="backgroundUrl" placeholder="https://www.com">
                                                     </div>
                                                 </div>
 
-                                                <div class="chooseColorBg uk-margin uk-hidden">
+                                                <div class="chooseColorBg uk-margin-top uk-hidden">
                                                     <label for="backgroundColor" class="uk-form-label">Escolher Cor</label>
                                                     <div class="uk-form-controls">
                                                         <input type="color" class="uk-input" id="backgroundColor" placeholder="https://www.com">
@@ -312,17 +311,10 @@
                                             </div>
                                             <button class="uk-button uk-button-secondary change-background">Adicionar</button>
                                         </div>
-                                    </div>
-                                </div>
-                                <hr class="uk-divider-icon">
-                            </li>
-                            <li class="accordion-item">
-                                <a class="uk-accordion-title" href="#">Efeitos</a>
-                                <div class="uk-accordion-content uk-padding uk-background-default">
-                                    <div class="accordion-body effects">
-                                        <div class="input-flex" data-element="effects">
+                                        <hr>
+                                        <div class="input-flex uk-margin-top" data-element="background">
                                             <div class="uk-flex uk-flex-column">
-                                                <label class="uk-form-label uk-margin-bottom">Fundo de tela</label>
+                                                <label class="uk-form-label ">Efeitos</label>
 
                                                 <div class="uk-margin">
                                                     <label for="blur">Blur</label>
@@ -363,13 +355,65 @@
                                                     <label for="sepia">Sepia</label>
                                                     <input id="sepia" class="uk-range" type="range" value="0" min="0" max="100" step="1">
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <hr class="uk-divider-icon">
                             </li>
+                            <!-- <li class="accordion-item">
+                                <a class="uk-accordion-title" href="#">Efeitos</a>
+                                <div class="uk-accordion-content uk-padding uk-background-default">
+                                    <div class="accordion-body effects">
+                                        <div class="input-flex" data-element="effects">
+                                            <div class="uk-flex uk-flex-column">
+                                                <label class="uk-form-label uk-margin-bottom">Efeitos</label>
+
+                                                <div class="uk-margin">
+                                                    <label for="blur">Blur</label>
+                                                    <input id="blur" class="uk-range" type="range" value="0" min="0" max="10" step="1">
+                                                </div>
+
+                                                <div class="uk-margin">
+                                                    <label for="brightness">Brightness</label>
+                                                    <input id="brightness" class="uk-range" type="range" value="100" min="0" max="200" step="1">
+                                                </div>
+
+                                                <div class="uk-margin">
+                                                    <label for="contrast">Contrast</label>
+                                                    <input id="contrast" class="uk-range" type="range" value="100" min="0" max="1000" step="1">
+                                                </div>
+
+                                                <div class="uk-margin">
+                                                    <label for="grayscale">Grayscale</label>
+                                                    <input id="grayscale" class="uk-range" type="range" value="0" min="0" max="100" step="1">
+                                                </div>
+
+                                                <div class="uk-margin">
+                                                    <label for="invert">Invert</label>
+                                                    <input id="invert" class="uk-range" type="range" value="0" min="0" max="100" step="1">
+                                                </div>
+
+                                                <div class="uk-margin">
+                                                    <label for="opacity">Opacity</label>
+                                                    <input id="opacity" class="uk-range" type="range" value="100" min="0" max="100" step="1">
+                                                </div>
+
+                                                <div class="uk-margin">
+                                                    <label for="saturate">Saturate</label>
+                                                    <input id="saturate" class="uk-range" type="range" value="100" min="0" max="1000" step="0.1">
+                                                </div>
+
+                                                <div class="uk-margin">
+                                                    <label for="sepia">Sepia</label>
+                                                    <input id="sepia" class="uk-range" type="range" value="0" min="0" max="100" step="1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="uk-divider-icon">
+                            </li> -->
                             <li class="accordion-item">
                                 <a class="uk-accordion-title" href="#">Fonte</a>
                                 <div class="uk-accordion-content uk-padding uk-background-default">
@@ -444,7 +488,7 @@
         </div>
     </div>
 
-    <script type="module" src="script.js" defer crossorigin="anonymous"></script>
+    <script type="module" src="js/script.js" defer crossorigin="anonymous"></script>
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit-icons.min.js"></script>

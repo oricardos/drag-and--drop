@@ -9,6 +9,10 @@
     box-sizing: border-box;
 }
 
+hr {
+    margin: 40px 0!important;
+}
+
 h2.title {
     margin:  40px;
 }
@@ -25,11 +29,12 @@ h5 {
 
 input[type=text], 
 input[type=email], 
-input[type=file],
+input[type=file]#backgroundFile,
+input[type=color],
 textarea {
     width: 500px;
     max-width: 100%;
-    border: solid 1px #0a0a0a;
+    border: solid 1px #0a0a0a!important;
 }
 
 input[type=text], input[type=email] {

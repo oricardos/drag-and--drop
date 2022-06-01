@@ -19,6 +19,7 @@
   input[type=text], 
   input[type=email], 
   input[type=file],
+  input[type=color],
   textarea#beacons-bio {
     margin-bottom: 1rem;
     width: 100%;
@@ -56,6 +57,7 @@
   input[type=text], 
   input[type=email], 
   input[type=file],
+  input[type=color],
   textarea#beacons-bio {
     margin-bottom: 1rem;
     width: 100%;
@@ -116,6 +118,7 @@
   input[type=text], 
   input[type=email], 
   input[type=file],
+  input[type=color],
   textarea#beacons-bio {
     max-width: 500px;
     margin-right: 20px;
