@@ -1,7 +1,9 @@
+import changeButtonText from '../changeButtonText.js';
 import showSections from '../showSections/showSections.js';
 import createSectionEl from './createSectionEl.js';
 
 export default function createTweet() {
+  // captura os elementos
   const twitterValue = document.getElementById('beacons-tweet');
   const addTweet = document.querySelector('.add-tweet');
   const twitter = window.localStorage.getItem('twitter');
@@ -17,7 +19,6 @@ export default function createTweet() {
     row.classList.add('row');
     col.classList.add('col-12');
 
-    // todo: conseguir mostrar o tweet
     const twitterProfileElement = `
       <span class="badge bg-primary">
         <a href="https://twitter.com/${profile}?ref_src=twsrc%5Etfw"
@@ -36,6 +37,12 @@ export default function createTweet() {
     createSectionEl('section-twitter', row);
   }
 
+  // altera o texto do botão para 'atualizar' quando o valor do input for alterado
+  twitterValue.addEventListener('keyup', function () {
+    changeButtonText(addTweet);
+  });
+
+  // adiciona o elemento no preview
   addTweet.addEventListener('click', function (evt) {
     if (twitterValue.value !== '') {
       window.localStorage.setItem('twitter', twitterValue.value);
@@ -44,7 +51,9 @@ export default function createTweet() {
     }
   });
 
+  // se já existir um email no localStorage, adiciona no preview
   if (twitter) {
+    //switch para mostrar/ocultar no preview
     const switchTwitter = document.querySelector('.switch-tweet');
     switchTwitter.classList.remove('uk-hidden');
     switchTwitter.classList.add('uk-flex');

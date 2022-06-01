@@ -1,7 +1,9 @@
+import changeButtonText from '../changeButtonText.js';
 import showSections from '../showSections/showSections.js';
 import createSectionEl from './createSectionEl.js';
 
-export default function createMusic(el) {
+export default function createMusic() {
+  // captura os elementos
   const iframeValue = document.getElementById('beacons-music');
   const addMusic = document.querySelector('.add-music');
   const iframe = window.localStorage.getItem('iframe');
@@ -29,7 +31,12 @@ export default function createMusic(el) {
     createSectionEl('section-music', row);
   }
 
-  // evento no botão
+  // altera o texto do botão para 'atualizar' quando o valor do input for alterado
+  iframeValue.addEventListener('keyup', function () {
+    changeButtonText(addMusic);
+  });
+
+  // adiciona o iframe no preview
   addMusic.addEventListener('click', function () {
     if (iframeValue.value !== '') {
       window.localStorage.setItem('iframe', iframeValue.value);
@@ -38,6 +45,7 @@ export default function createMusic(el) {
     }
   });
 
+  // se já existir um iframe no localStorage, adiciona no preview
   if (iframe || iframeValue.value !== '') {
     const switchMusic = document.querySelector('.switch-music');
     switchMusic.classList.remove('uk-hidden');

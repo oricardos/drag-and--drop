@@ -9,7 +9,7 @@ import createText from './modules/create/createText.js';
 import createLink from './modules/create/createLink.js';
 import createEmail from './modules/create/createEmail.js';
 import createTweet from './modules/create/createTweet.js';
-import createYouTube from './modules/create/createYouTube.js';
+import createVideo from './modules/create/createVideo.js';
 import createMusic from './modules/create/createMusic.js';
 
 // modulos de aparencia
@@ -28,7 +28,7 @@ createText();
 createLink();
 createEmail();
 createTweet();
-createYouTube();
+createVideo();
 createMusic();
 
 // modulos de aparencia

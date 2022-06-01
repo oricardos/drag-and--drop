@@ -1,13 +1,16 @@
+import changeButtonText from '../changeButtonText.js';
 import showSections from '../showSections/showSections.js';
 import createSectionEl from './createSectionEl.js';
 
 export default function createLink() {
+  // captura os elementos
   const nameLink = document.getElementById('beacons-link-name');
   const linkHref = document.getElementById('beacons-link-value');
   const addLink = document.querySelector('.add-link');
 
   const localStorageLink = JSON.parse(localStorage.getItem('link')) || [];
 
+  // função que cria o elemento
   function createLinkSection(values) {
     const section = document.createElement('div');
     const titleSection = document.createElement('h3');
@@ -30,6 +33,17 @@ export default function createLink() {
     nameLink.focus();
   }
 
+  // TODO - ADICIONAR ESSA PARTE QUANDO HOUVER EDIÇÃO DO CONTEÚDO
+
+  // altera o texto do botão para 'atualizar' quando o valor do input for alterado
+  // linkHref.addEventListener('keyup', function () {
+  //   changeButtonText(addLink);
+  // });
+  // nameLink.addEventListener('keyup', function () {
+  //   changeButtonText(addLink);
+  // });
+
+  // adiciona o link no preview
   addLink.addEventListener('click', function () {
     if (linkHref.value !== '' && nameLink.value !== '') {
       const link = { name: nameLink.value, value: linkHref.value };
@@ -41,7 +55,9 @@ export default function createLink() {
     }
   });
 
+  // se já existir um link no localStorage, adiciona no preview
   if (localStorageLink) {
+    // switch para mostrar ou esconder no preview
     const switchTexts = document.querySelector('.switch-links');
     switchTexts.classList.remove('uk-hidden');
     switchTexts.classList.add('uk-flex');

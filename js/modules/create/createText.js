@@ -1,7 +1,9 @@
 import showSections from '../showSections/showSections.js';
 import createSectionEl from './createSectionEl.js';
+import changeButtonText from '../changeButtonText.js';
 
 export default function createText() {
+  // captura dos elementos
   const textValue = document.getElementById('beacons-bio');
   const addBio = document.querySelector('.add-bio');
   const bio = window.localStorage.getItem('bio');
@@ -21,7 +23,12 @@ export default function createText() {
     createSectionEl('section-text', section);
   }
 
-  // evento no botão
+  // altera o texto do botão para 'atualizar' quando o valor do input for alterado
+  textValue.addEventListener('keyup', function () {
+    changeButtonText(addBio);
+  });
+
+  // adiciona o texto no preview
   addBio.addEventListener('click', () => {
     if (textValue.value !== '') {
       window.localStorage.setItem('bio', textValue.value);
@@ -32,6 +39,7 @@ export default function createText() {
     }
   });
 
+  // se já existir um texto no localStorage, adiciona no preview
   if (bio) {
     const switchTexts = document.querySelector('.switch-texts');
     switchTexts.classList.remove('uk-hidden');

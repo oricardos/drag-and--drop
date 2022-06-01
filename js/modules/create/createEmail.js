@@ -1,7 +1,9 @@
+import changeButtonText from '../changeButtonText.js';
 import showSections from '../showSections/showSections.js';
 import createSectionEl from './createSectionEl.js';
 
 export default function createEmail() {
+  // captura os elementos
   const mailto = document.getElementById('beacons-email');
   const addEmail = document.querySelector('.add-email');
   const email = window.localStorage.getItem('email');
@@ -41,6 +43,12 @@ export default function createEmail() {
     createSectionEl('section-email', beaconsSection);
   }
 
+  // altera o texto do botão para 'atualizar' quando o valor do input for alterado
+  mailto.addEventListener('keyup', function () {
+    changeButtonText(addEmail);
+  });
+
+  // adiciona o elemento no preview
   addEmail.addEventListener('click', function () {
     if (mailto.value !== '') {
       window.localStorage.setItem('email', mailto.value);
@@ -50,7 +58,9 @@ export default function createEmail() {
     }
   });
 
+  // se já existir um email no localStorage, adiciona no preview
   if (email) {
+    // switch para mostrar/ocultar o email
     const switchEmail = document.querySelector('.switch-email');
     switchEmail.classList.remove('uk-hidden');
     switchEmail.classList.add('uk-flex');
