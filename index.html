@@ -59,7 +59,7 @@
                                                 <div class="chooseUrl uk-margin-top uk-hidden">
                                                     <label for="beacons-link-value" class="uk-form-label">Add URL</label>
                                                     <div class="uk-form-controls">
-                                                        <input type="text" class="uk-input" id="url" placeholder="https://www.com">
+                                                        <input type="text" class="uk-input" id="url" placeholder="https://">
                                                     </div>
                                                 </div>
                                             </div>
@@ -139,7 +139,7 @@
                                                 <div class="uk-margin-top">
                                                     <label for="beacons-link-value" class="uk-form-label">Link</label>
                                                     <div class="uk-form-controls">
-                                                        <input type="text" class="uk-input" id="beacons-link-value" placeholder="https://www.com">
+                                                        <input type="text" class="uk-input" id="beacons-link-value" placeholder="https://">
                                                     </div>
                                                 </div>
                                             </div>
@@ -162,7 +162,7 @@
                                     </div>
                                     <div class="accordion-body section-email">
                                         <div class="input-flex" data-element="email">
-                                            <div class="uk-margin">
+                                            <div class="uk-margin-top">
                                                 <label for="beacons-email" class="uk-form-label uk-text-default">Email</label>
                                                 <div class="uk-form-controls">
                                                     <input type="email" class="uk-input" id="beacons-email" placeholder="name@example.com">
@@ -187,8 +187,8 @@
                                     </div>
                                     <div class="accordion-body section-tweet">
                                         <div class="input-flex" data-element="tweet">
-                                            <div class="uk-margin">
-                                                <label for="beacons-tweet" class="uk-form-label">Tweet</label>
+                                            <div class="uk-margin-top">
+                                                <label for="beacons-tweet" class="uk-form-label">Twitter</label>
                                                 <div class="uk-form-controls">
                                                     <input type="email" class="uk-input" id="beacons-tweet" placeholder="@username">
                                                 </div>
@@ -217,7 +217,7 @@
                                     </div>
                                     <div class="accordion-body section-video">
                                         <div class="input-flex" data-element="video">
-                                            <div class="uk-margin">
+                                            <div class="uk-margin-top">
                                                 <label for="beacons-video" class="uk-form-label">Vídeo</label>
                                                 <div class="uk-form-controls">
                                                     <input type="text" class="uk-input" id="beacons-video" placeholder="YpkTADgjBas">
@@ -298,14 +298,14 @@
                                                 <div class="chooseUrlBg uk-margin-top uk-hidden">
                                                     <label for="backgroundUrl" class="uk-form-label">Add URL</label>
                                                     <div class="uk-form-controls">
-                                                        <input type="text" class="uk-input" id="backgroundUrl" placeholder="https://www.com">
+                                                        <input type="text" class="uk-input" id="backgroundUrl" placeholder="https://">
                                                     </div>
                                                 </div>
 
                                                 <div class="chooseColorBg uk-margin-top uk-hidden">
                                                     <label for="backgroundColor" class="uk-form-label">Escolher Cor</label>
                                                     <div class="uk-form-controls">
-                                                        <input type="color" class="uk-input" id="backgroundColor" placeholder="https://www.com">
+                                                        <input type="color" class="uk-input" id="backgroundColor">
                                                     </div>
                                                 </div>
                                             </div>
@@ -327,34 +327,41 @@
                                                 </div>
 
                                                 <div class="uk-margin">
-                                                    <label for="contrast">Contrast</label>
-                                                    <input id="contrast" class="uk-range" type="range" value="100" min="0" max="1000" step="1">
-                                                </div>
-
-                                                <div class="uk-margin">
                                                     <label for="grayscale">Grayscale</label>
                                                     <input id="grayscale" class="uk-range" type="range" value="0" min="0" max="100" step="1">
                                                 </div>
 
-                                                <div class="uk-margin">
-                                                    <label for="invert">Invert</label>
-                                                    <input id="invert" class="uk-range" type="range" value="0" min="0" max="100" step="1">
-                                                </div>
+                                                <ul uk-accordion>
+                                                    <li>
+                                                        <a class="uk-accordion-title uk-text-small uk-text-bold" href="#">Mais Efeitos</a>
+                                                        <div class="uk-accordion-content">
+                                                            <div class="uk-margin">
+                                                                <label for="contrast">Contrast</label>
+                                                                <input id="contrast" class="uk-range" type="range" value="100" min="0" max="1000" step="1">
+                                                            </div>
 
-                                                <div class="uk-margin">
-                                                    <label for="opacity">Opacity</label>
-                                                    <input id="opacity" class="uk-range" type="range" value="100" min="0" max="100" step="1">
-                                                </div>
+                                                            <div class="uk-margin">
+                                                                <label for="invert">Invert</label>
+                                                                <input id="invert" class="uk-range" type="range" value="0" min="0" max="100" step="1">
+                                                            </div>
 
-                                                <div class="uk-margin">
-                                                    <label for="saturate">Saturate</label>
-                                                    <input id="saturate" class="uk-range" type="range" value="100" min="0" max="1000" step="0.1">
-                                                </div>
+                                                            <div class="uk-margin">
+                                                                <label for="opacity">Opacity</label>
+                                                                <input id="opacity" class="uk-range" type="range" value="100" min="0" max="100" step="1">
+                                                            </div>
 
-                                                <div class="uk-margin">
-                                                    <label for="sepia">Sepia</label>
-                                                    <input id="sepia" class="uk-range" type="range" value="0" min="0" max="100" step="1">
-                                                </div>
+                                                            <div class="uk-margin">
+                                                                <label for="saturate">Saturate</label>
+                                                                <input id="saturate" class="uk-range" type="range" value="100" min="0" max="1000" step="0.1">
+                                                            </div>
+
+                                                            <div class="uk-margin">
+                                                                <label for="sepia">Sepia</label>
+                                                                <input id="sepia" class="uk-range" type="range" value="0" min="0" max="100" step="1">
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
