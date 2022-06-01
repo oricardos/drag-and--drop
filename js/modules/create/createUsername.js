@@ -1,4 +1,7 @@
+import changeButtonText from '../changeButtonText.js';
+
 export default function createUsername() {
+  // captura dos elementos
   const usernameValue = document.getElementById('beacons-user-name');
   const nameValue = document.getElementById('beacons-name');
   const addUsername = document.querySelector('.add-username');
@@ -24,6 +27,15 @@ export default function createUsername() {
     sectionHeader.appendChild(texts);
   }
 
+  // altera o texto do botão para 'atualizar' quando o valor do input for alterado
+  usernameValue.addEventListener('keyup', function () {
+    changeButtonText(addUsername);
+  });
+  nameValue.addEventListener('keyup', function () {
+    changeButtonText(addUsername);
+  });
+
+  // adiciona o nome e o username no header
   addUsername.addEventListener('click', function (evt) {
     if (usernameValue.value !== '' && nameValue.value !== '') {
       window.localStorage.setItem('username', usernameValue.value);
@@ -33,6 +45,8 @@ export default function createUsername() {
       document.location.reload(true);
     }
   });
+
+  // se já existir um nome e um username no localStorage, adiciona no header
   if (name && username) {
     nameValue.value = name;
     usernameValue.value = username;
