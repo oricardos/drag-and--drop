@@ -13,6 +13,7 @@ export default function createProfilePhoto() {
   const profilePhotoFile = window.localStorage.getItem('profilePhotoFile');
 
   const addProfilePhoto = document.querySelector('.add-profilephoto');
+  const btnPreview = document.querySelector('.btn-preview');
 
   // mostra/esconde os campos de escolha de arquivo ou url
   const choosesBtns = document.querySelectorAll('.content .uk-radio');
@@ -50,6 +51,7 @@ export default function createProfilePhoto() {
 
   // se já existir uma foto no localStorage, adiciona no header
   if (profilePhotoUrl) {
+    btnPreview.classList.remove('uk-hidden');
     inputUrl.value = profilePhotoUrl;
     addProfilePhoto.removeAttribute('disabled');
     createPhoto(profilePhotoUrl);

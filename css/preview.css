@@ -24,5 +24,15 @@ button.btn-goback {
 button.btn-preview {
   margin-top: 32px;
   margin: 0 auto;
+  transform: translateY(-50%);
+  animation: fadeIn 0.7s ease-in-out forwards;
 }
 
+@keyframes fadeIn {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+} 
