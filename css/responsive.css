@@ -1,4 +1,4 @@
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .container-grid {
     display: flex;
     flex-direction: column;
@@ -21,11 +21,103 @@
   input[type=file],
   textarea#beacons-bio {
     margin-bottom: 1rem;
+    width: 100%;
+    max-width: 100%;
   }
 
-.input-flex {
+  .input-flex {
     display: flex;
     flex-direction: column;
     align-items: inherit!important;
+  }
+
+  .preview-grid{
+   padding: 40px 0;
+  }
+
+  button.btn-preview {
+    display: none;
+  }
+}
+
+@media (max-width: 992px) {
+  .main-grid{
+    padding: 20px 0;
+  }
+
+  h2.title {
+    margin: 10px 0;
+  }
+
+  ul.uk-padding {
+    padding: 10px 0;
+  }
+
+  input[type=text], 
+  input[type=email], 
+  input[type=file],
+  textarea#beacons-bio {
+    margin-bottom: 1rem;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .input-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: inherit!important;
+  }
+
+  .preview-grid {
+    padding: 40px 1rem;
+  }
+}
+
+@media (min-width: 993px) {
+  .main-grid{
+    padding: 20px 0;
+  }
+
+  h2.title {
+    margin: 10px 0;
+  }
+
+  ul.uk-padding {
+    padding: 10px 0;
+  }
+
+  input[type=text], 
+  input[type=email], 
+  input[type=file],
+  textarea#beacons-bio {
+    max-width: 300px;
+  }
+
+  .input-flex {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main-grid {
+    padding: 40px;
+  }
+
+  h2.title {
+    margin: 30px;
+  }
+
+  ul.uk-padding {
+    padding: 30px;
+  }
+
+  input[type=text], 
+  input[type=email], 
+  input[type=file],
+  textarea#beacons-bio {
+    max-width: 500px;
+    margin-right: 20px;
   }
 }
