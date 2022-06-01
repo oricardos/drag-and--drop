@@ -1,5 +1,7 @@
 div[class^="beacons-section"]{
     margin: 2rem 0;
+    transform: translateX(-20px);
+    animation: fadeIn .3s ease-in-out forwards;
 }
 
 .beacons-section-header {
@@ -31,6 +33,17 @@ p.user-name {
 
 .uk-block {
     display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .twitter-badge{
