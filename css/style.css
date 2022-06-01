@@ -30,7 +30,7 @@ h5 {
 input[type=text], 
 input[type=email], 
 input[type=file]#backgroundFile,
-input[type=color],
+input[type=color]:not(#titleFontColor, #fontColor),
 textarea {
     width: 500px;
     max-width: 100%;
