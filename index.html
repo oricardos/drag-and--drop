@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/css/uikit.min.css" />
 
@@ -34,7 +35,7 @@
                                 <a class="uk-accordion-title" href="#">Header</a>
                                 <div class="uk-accordion-content uk-padding uk-background-default">
                                     <div class="accordion-body section-header">
-                                        <div class="uk-flex uk-flex-bottom uk-flex-between" data-element="profile-photo">
+                                        <div class="input-flex uk-flex uk-flex-bottom uk-flex-between" data-element="profile-photo">
                                             <div class="uk-flex uk-flex-column">
 
                                                 <label class="uk-form-label uk-margin-bottom">Foto de Perfil</label>
@@ -67,7 +68,7 @@
 
                                         <hr class="uk-divider-small uk-margin">
 
-                                        <div class="uk-flex uk-flex-between uk-flex-bottom uk-width-1-1" data-element="user-name">
+                                        <div class="input-flex uk-flex uk-flex-between uk-flex-bottom uk-width-1-1" data-element="user-name">
                                             <div class="uk-flex uk-flex-column align-items-start">
                                                 <div class="uk-margin">
                                                     <label for="beacons-name" class="uk-form-label">Nome</label>
@@ -100,7 +101,7 @@
                                         <p class="mb-0">Mostrar Textos</p>
                                     </div>
                                     <div class="accordion-body section-text">
-                                        <div class="uk-flex justify-between uk-flex-bottom my-4" data-element="bio">
+                                        <div class="input-flex uk-flex justify-between uk-flex-bottom my-4" data-element="bio">
                                             <div class="uk-width-1-1">
                                                 <label for="beacons-bio" class="uk-form-label">Bio</label>
                                                 <div class="uk-form-controls">
@@ -126,7 +127,7 @@
                                         <p class="mb-0">Mostrar Links</p>
                                     </div>
                                     <div class="accordion-body section-links">
-                                        <div class="uk-flex uk-flex-between uk-flex-bottom my-4" data-element="links">
+                                        <div class="input-flex uk-flex uk-flex-between uk-flex-bottom my-4" data-element="links">
                                             <div>
                                                 <div class="uk-margin">
                                                     <label for="beacons-link-name" class="uk-form-label">Nome do Link</label>
@@ -152,7 +153,7 @@
                             <li class="accordion-item">
                                 <a href="#" class="uk-accordion-title">Email</a>
                                 <div class="uk-accordion-content uk-padding uk-background-default">
-                                    <div class="uk-flex uk-flex-middle switch-email uk-hidden">
+                                    <div class=" uk-flex uk-flex-middle switch-email uk-hidden">
                                         <div class="switch__container">
                                             <input id="switch-email" class="switch switch--shadow" type="checkbox" checked />
                                             <label for="switch-email"></label>
@@ -160,7 +161,7 @@
                                         <p class="mb-0">Mostrar Email</p>
                                     </div>
                                     <div class="accordion-body section-email">
-                                        <div class="uk-flex uk-flex-middle uk-flex-between my-4" data-element="email">
+                                        <div class="input-flex uk-flex uk-flex-middle uk-flex-between my-4" data-element="email">
                                             <div class="uk-margin">
                                                 <label for="beacons-email" class="uk-form-label uk-text-default">Email</label>
                                                 <div class="uk-form-controls">
@@ -185,7 +186,7 @@
                                         <p class="mb-0">Mostrar Tweet</p>
                                     </div>
                                     <div class="accordion-body section-tweet">
-                                        <div class="uk-flex uk-flex-middle uk-flex-between my-4" data-element="tweet">
+                                        <div class="input-flex uk-flex uk-flex-middle uk-flex-between my-4" data-element="tweet">
                                             <div class="uk-margin">
                                                 <label for="beacons-tweet" class="uk-form-label">Tweet</label>
                                                 <div class="uk-form-controls">
@@ -215,7 +216,7 @@
                                         <p class="mb-0">Mostrar Vídeo</p>
                                     </div>
                                     <div class="accordion-body section-video">
-                                        <div class="uk-flex uk-flex-middle uk-flex-between my-4" data-element="video">
+                                        <div class="input-flex uk-flex uk-flex-middle uk-flex-between my-4" data-element="video">
                                             <div class="uk-margin">
                                                 <label for="beacons-video" class="uk-form-label">Vídeo</label>
                                                 <div class="uk-form-controls">
@@ -246,7 +247,7 @@
                                         <p class="mb-0">Mostrar plataforma</p>
                                     </div>
                                     <div class="accordion-body section-music">
-                                        <div class="uk-flex uk-flex-middle uk-flex-bottom uk-flex-between" data-element="music">
+                                        <div class="input-flex uk-flex uk-flex-middle uk-flex-bottom uk-flex-between" data-element="music">
                                             <div class="uk-margin-top">
                                                 <label for="beacons-music" class="uk-form-label">Música</label>
                                                 <div class="uk-form-controls">
@@ -269,7 +270,7 @@
                                 <a class="uk-accordion-title" href="#">Background</a>
                                 <div class="uk-accordion-content uk-padding uk-background-default">
                                     <div class="accordion-body">
-                                        <div class="uk-flex uk-flex-bottom uk-flex-between" data-element="background">
+                                        <div class="input-flex uk-flex uk-flex-bottom uk-flex-between" data-element="background">
                                             <div class="uk-flex uk-flex-column">
 
                                                 <label class="uk-form-label uk-margin-bottom">Fundo de tela</label>
@@ -302,7 +303,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="chooseColor uk-margin uk-hidden">
+                                                <div class="chooseColorBg uk-margin uk-hidden">
                                                     <label for="backgroundColor" class="uk-form-label">Escolher Cor</label>
                                                     <div class="uk-form-controls">
                                                         <input type="color" class="uk-input" id="backgroundColor" placeholder="https://www.com">
@@ -319,7 +320,7 @@
                                 <a class="uk-accordion-title" href="#">Efeitos</a>
                                 <div class="uk-accordion-content uk-padding uk-background-default">
                                     <div class="accordion-body effects">
-                                        <div class="uk-flex uk-flex-bottom uk-flex-between" data-element="effects">
+                                        <div class="input-flex uk-flex uk-flex-bottom uk-flex-between" data-element="effects">
                                             <div class="uk-flex uk-flex-column">
                                                 <label class="uk-form-label uk-margin-bottom">Fundo de tela</label>
 
@@ -373,10 +374,10 @@
                                 <a class="uk-accordion-title" href="#">Fonte</a>
                                 <div class="uk-accordion-content uk-padding uk-background-default">
                                     <div class="accordion-body font">
-                                        <div class="uk-flex uk-flex-bottom uk-flex-between" data-element="effects">
+                                        <div class="input-flex uk-flex uk-flex-bottom uk-flex-between" data-element="effects">
                                             <div class="uk-flex uk-flex-column">
                                                 <h4>Títulos</h4>
-                                                <div class="uk-column-1-2">
+                                                <div class="input-flex uk-column-1-2">
                                                     <div class="uk-margin chooseColor">
                                                         <label for="titleFontColor" class="uk-form-label uk-margin-bottom">Escolher Cor</label>
                                                         <div class="uk-form-controls">
@@ -392,8 +393,8 @@
                                                     </div>
                                                 </div>
                                                 <h4>Outros textos</h4>
-                                                <div class="uk-column-1-2">
-                                                    <div class="uk-margin chooseColor">
+                                                <div class="input-flex uk-column-1-2">
+                                                    <div class="uk-margin chooseColorBg">
                                                         <label for="fontColor" class="uk-form-label uk-margin-bottom">Escolher Cor</label>
                                                         <div class="uk-form-controls">
                                                             <input type="color" class="uk-input" id="fontColor">
@@ -410,7 +411,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <hr class="uk-divider-icon">main-grid
+                                    <hr class="uk-divider-icon">
                             </li>
                         </ul>
                     </li>

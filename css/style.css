@@ -28,7 +28,7 @@ input[type=email],
 input[type=file],
 textarea {
     width: 500px;
-    max-width: 90%;
+    max-width: 100%;
     border: solid 1px #0a0a0a;
 }
 
@@ -41,6 +41,9 @@ input[type=text], input[type=email] {
     outline: none;
 }
 
+label.uk-form-label {
+    font-weight: 500;
+}
 
 body {
     background-color: #0a0a0a;
