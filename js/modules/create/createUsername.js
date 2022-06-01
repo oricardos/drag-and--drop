@@ -1,4 +1,5 @@
 import changeButtonText from '../changeButtonText.js';
+import removeDisabled from '../removeDisabled.js';
 
 export default function createUsername() {
   // captura dos elementos
@@ -8,6 +9,9 @@ export default function createUsername() {
 
   const name = window.localStorage.getItem('name');
   const username = window.localStorage.getItem('username');
+
+  removeDisabled(usernameValue, addUsername, 'text');
+  removeDisabled(nameValue, addUsername, 'text');
 
   // função que cria e adiciona os elementos no header
   function createElements(name, username) {
@@ -27,14 +31,6 @@ export default function createUsername() {
     sectionHeader.appendChild(texts);
   }
 
-  // altera o texto do botão para 'atualizar' quando o valor do input for alterado
-  usernameValue.addEventListener('keyup', function () {
-    changeButtonText(addUsername);
-  });
-  nameValue.addEventListener('keyup', function () {
-    changeButtonText(addUsername);
-  });
-
   // adiciona o nome e o username no header
   addUsername.addEventListener('click', function (evt) {
     if (usernameValue.value !== '' && nameValue.value !== '') {
@@ -50,6 +46,15 @@ export default function createUsername() {
   if (name && username) {
     nameValue.value = name;
     usernameValue.value = username;
+    addUsername.removeAttribute('disabled');
+
+    // altera o texto do botão para 'atualizar' quando o valor do input for alterado
+    usernameValue.addEventListener('keyup', function () {
+      changeButtonText(addUsername);
+    });
+    nameValue.addEventListener('keyup', function () {
+      changeButtonText(addUsername);
+    });
 
     createElements(name, username);
   }

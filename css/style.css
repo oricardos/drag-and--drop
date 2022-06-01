@@ -27,7 +27,12 @@ h5 {
     margin-bottom: 0!important;
 }
 
+button:disabled {
+    cursor: not-allowed;
+}
+
 input[type=text], 
+input[type=url],
 input[type=email], 
 input[type=file]#backgroundFile,
 input[type=color]:not(#titleFontColor, #fontColor),

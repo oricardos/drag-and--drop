@@ -1,5 +1,6 @@
 import createPhoto from './createPhoto.js';
 import changeButtonText from '../changeButtonText.js';
+import removeDisabled from '../removeDisabled.js';
 
 export default function createProfilePhoto() {
   const chooseFileSection = document.querySelector('.chooseFile');
@@ -30,13 +31,9 @@ export default function createProfilePhoto() {
     });
   });
 
-  // altera o texto do botão para 'atualizar' quando o valor do input for alterado
-  photo.addEventListener('change', function () {
-    changeButtonText(addProfilePhoto);
-  });
-  inputUrl.addEventListener('keyup', function () {
-    changeButtonText(addProfilePhoto);
-  });
+  // remove o disable do botão quando um arquivo ou url for selecionado
+  removeDisabled(photo, addProfilePhoto, 'file');
+  removeDisabled(inputUrl, addProfilePhoto, 'url');
 
   // adiciona a foto no header
   addProfilePhoto.addEventListener('click', function () {
@@ -54,8 +51,18 @@ export default function createProfilePhoto() {
   // se já existir uma foto no localStorage, adiciona no header
   if (profilePhotoUrl) {
     inputUrl.value = profilePhotoUrl;
+    addProfilePhoto.removeAttribute('disabled');
     createPhoto(profilePhotoUrl);
+
+    // altera o texto do botão para 'atualizar' quando o valor do input for alterado
+    photo.addEventListener('change', function () {
+      changeButtonText(addProfilePhoto);
+    });
+    inputUrl.addEventListener('keyup', function () {
+      changeButtonText(addProfilePhoto);
+    });
   } else if (profilePhotoFile) {
+    addProfilePhoto.removeAttribute('disabled');
     createPhoto(profilePhotoFile);
   }
 }
