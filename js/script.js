@@ -17,6 +17,7 @@ import changeBackground from './modules/appearance/changeBackground.js';
 import changeEffect from './modules/appearance/changeEffect.js';
 import changeFont from './modules/appearance/changeFont.js';
 
+introJs().start();
 preview();
 cookie();
 draganddrop();

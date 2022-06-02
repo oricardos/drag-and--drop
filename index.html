@@ -9,6 +9,8 @@
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/css/uikit.min.css" />
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intro.js@5.1.0/introjs.min.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -16,13 +18,27 @@
 </head>
 
 <body>
-    <div class="container-grid">
+    <div class="container-grid" 
+        data-title="Seja bem-vindo ao Beacons!" 
+        data-intro='Seja bem-vindo ao Beacons da deep web' 
+        data-step="1"
+    >
         <div class="main-grid">
             <div class="board">
                 <!-- tabs menu-->
                 <ul class="uk-tab" data-uk-tab="{connect:'#tab-id'}">
-                    <li><a href="">📝 Conteúdo</a></li>
-                    <li><a href="">🖌 Aparência</a></li>
+                    <li>
+                        <a href="" 
+                            data-title="Conteúdo" 
+                            data-intro='Na aba CONTEÚDO você consegue gerenciar todo o conteúdo da sua página.' 
+                            data-step="2"
+                        >📝 Conteúdo</a></li>
+                    <li>
+                        <a href=""
+                        data-title="Aparência" 
+                        data-intro='Na aba APARÊNCIA você consegue personalizar sua página e deixar ela com a sua cara.' 
+                        data-step="3"
+                        >🖌 Aparência</a></li>
                 </ul>
 
                 <div id="tab-id" class="uk-switcher uk-margin">
@@ -35,7 +51,13 @@
                                 <a class="uk-accordion-title" href="#">Header</a>
                                 <div class="uk-accordion-content uk-padding uk-background-default">
                                     <div class="accordion-body section-header">
-                                        <div class="input-flex" data-element="profile-photo">
+                                        <div 
+                                            class="input-flex" 
+                                            data-element="profile-photo"
+                                            data-title="Vamos começar!" 
+                                            data-intro='Comece adicionando uma foto sua...' 
+                                            data-step="5"
+                                        >
                                             <div class="uk-flex uk-flex-column">
 
                                                 <label class="uk-form-label uk-margin-bottom">Foto de Perfil</label>
@@ -471,12 +493,17 @@
         </div>
         <!-- PREVIEW -->
         <div class="preview-grid">
-            <div class="sticky-top">
+            <div 
+                class="sticky-top" 
+                data-title="Preview" 
+                data-intro='Na área de preview, você pode ver como está ficando o seu projeto.' 
+                data-step="4"
+            >
                 <div class="uk-margin-auto uk-flex uk-margin-bottom">
                     <button class="uk-button uk-button-text btn-preview uk-hidden">Pré-visualizar 👀</button>
                 </div>
                 <div class="border-preview uk-margin-auto">
-                    <div class="dropzone-preview ">
+                    <div class="dropzone-preview">
                         <!-- backgrounds e efeitos -->
                         <div class="effect"></div>
                         <div class="preview"></div>
@@ -496,11 +523,14 @@
     </div>
 
     <script type="module" src="js/script.js" defer crossorigin="anonymous"></script>
+    
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit-icons.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/intro.js@5.1.0/intro.min.js"></script>
 </body>
 
 </html>
