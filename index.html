@@ -18,27 +18,15 @@
 </head>
 
 <body>
-    <div class="container-grid" 
-        data-title="Seja bem-vindo ao Beacons!" 
-        data-intro='Seja bem-vindo ao Beacons da deep web' 
-        data-step="1"
-    >
+    <div class="container-grid">
         <div class="main-grid">
             <div class="board">
                 <!-- tabs menu-->
                 <ul class="uk-tab" data-uk-tab="{connect:'#tab-id'}">
                     <li>
-                        <a href="" 
-                            data-title="Conteúdo" 
-                            data-intro='Na aba CONTEÚDO você consegue gerenciar todo o conteúdo da sua página.' 
-                            data-step="2"
-                        >📝 Conteúdo</a></li>
+                        <a href="" class="intro-content">📝 Conteúdo</a></li>
                     <li>
-                        <a href=""
-                        data-title="Aparência" 
-                        data-intro='Na aba APARÊNCIA você consegue personalizar sua página e deixar ela com a sua cara.' 
-                        data-step="3"
-                        >🖌 Aparência</a></li>
+                        <a href="" class="intro-appearance">🖌 Aparência</a></li>
                 </ul>
 
                 <div id="tab-id" class="uk-switcher uk-margin">
@@ -52,12 +40,7 @@
                                 <div class="uk-accordion-content uk-padding uk-background-default">
                                     <div class="accordion-body section-header">
                                         <div 
-                                            class="input-flex" 
-                                            data-element="profile-photo"
-                                            data-title="Vamos começar!" 
-                                            data-intro='Comece adicionando uma foto sua...' 
-                                            data-step="5"
-                                        >
+                                            class="input-flex intro-start">
                                             <div class="uk-flex uk-flex-column">
 
                                                 <label class="uk-form-label uk-margin-bottom">Foto de Perfil</label>
@@ -494,11 +477,7 @@
         <!-- PREVIEW -->
         <div class="preview-grid">
             <div 
-                class="sticky-top" 
-                data-title="Preview" 
-                data-intro='Na área de preview, você pode ver como está ficando o seu projeto.' 
-                data-step="4"
-            >
+                class="sticky-top intro-preview">
                 <div class="uk-margin-auto uk-flex uk-margin-bottom">
                     <button class="uk-button uk-button-text btn-preview uk-hidden">Pré-visualizar 👀</button>
                 </div>
