@@ -15,6 +15,10 @@ export default function createProfilePhoto() {
   const addProfilePhoto = document.querySelector('.add-profilephoto');
   const btnPreview = document.querySelector('.btn-preview');
 
+  // remove o disable do botão quando um arquivo ou url for selecionado
+  removeDisabled(photo, addProfilePhoto, 'file');
+  removeDisabled(inputUrl, addProfilePhoto, 'url');
+
   // mostra/esconde os campos de escolha de arquivo ou url
   const choosesBtns = document.querySelectorAll('.content .uk-radio');
   choosesBtns.forEach((choose) => {
@@ -31,10 +35,6 @@ export default function createProfilePhoto() {
       }
     });
   });
-
-  // remove o disable do botão quando um arquivo ou url for selecionado
-  removeDisabled(photo, addProfilePhoto, 'file');
-  removeDisabled(inputUrl, addProfilePhoto, 'url');
 
   // adiciona a foto no header
   addProfilePhoto.addEventListener('click', function () {

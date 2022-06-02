@@ -46,6 +46,8 @@ export default function createUsername() {
   if (name && username) {
     nameValue.value = name;
     usernameValue.value = username;
+
+    // se já existir um nome e um username no localStorage, remove o atributo disabled do botão
     addUsername.removeAttribute('disabled');
 
     // altera o texto do botão para 'atualizar' quando o valor do input for alterado

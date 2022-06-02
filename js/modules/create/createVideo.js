@@ -2,12 +2,16 @@ import createSectionEl from './createSectionEl.js';
 import showSections from '../showSections/showSections.js';
 import createVideoElement from './createVideoElement.js';
 import changeButtonText from '../changeButtonText.js';
+import removeDisabled from '../removeDisabled.js';
 
 export default function createYouTube() {
   // captura dos elementos
   const linkValue = document.getElementById('beacons-video');
   const addLink = document.querySelector('.add-video');
   const video = window.localStorage.getItem('video');
+
+  // remove o atributo disabled do botão quando um valor for inserido
+  removeDisabled(linkValue, addLink, 'url');
 
   // função que cria o elemento
   function createVideoSection(link) {
@@ -41,6 +45,9 @@ export default function createYouTube() {
     const switchYouTube = document.querySelector('.switch-video');
     switchYouTube.classList.remove('uk-hidden');
     switchYouTube.classList.add('uk-block');
+
+    // se já existir um video no localStorage, remove o atributo disabled do botão
+    addLink.removeAttribute('disabled');
 
     // altera o texto do botão para 'atualizar' quando o valor do input for alterado
     linkValue.addEventListener('keyup', function () {

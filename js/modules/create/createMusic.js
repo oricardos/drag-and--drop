@@ -1,12 +1,16 @@
 import changeButtonText from '../changeButtonText.js';
 import showSections from '../showSections/showSections.js';
 import createSectionEl from './createSectionEl.js';
+import removeDisabled from '../removeDisabled.js';
 
 export default function createMusic() {
   // captura os elementos
   const iframeValue = document.getElementById('beacons-music');
   const addMusic = document.querySelector('.add-music');
   const iframe = window.localStorage.getItem('iframe');
+
+  // remove o atributo disabled do botão quando um valor for inserido
+  removeDisabled(iframeValue, addMusic, 'text');
 
   // função que cria o elemento
   function createIframeSection(iframe) {
@@ -45,6 +49,9 @@ export default function createMusic() {
     const switchMusic = document.querySelector('.switch-music');
     switchMusic.classList.remove('uk-hidden');
     switchMusic.classList.add('uk-flex');
+
+    // se já existir um iframe no localStorage, remove o atributo disabled do botão
+    addMusic.removeAttribute('disabled');
 
     // altera o texto do botão para 'atualizar' quando o valor do input for alterado
     iframeValue.addEventListener('keyup', function () {

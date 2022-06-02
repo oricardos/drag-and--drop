@@ -1,12 +1,16 @@
 import changeButtonText from '../changeButtonText.js';
 import showSections from '../showSections/showSections.js';
 import createSectionEl from './createSectionEl.js';
+import removeDisabled from '../removeDisabled.js';
 
 export default function createTweet() {
   // captura os elementos
   const twitterValue = document.getElementById('beacons-tweet');
   const addTweet = document.querySelector('.add-tweet');
   const twitter = window.localStorage.getItem('twitter');
+
+  // remove o atributo disabled do botão quando um valor for inserido
+  removeDisabled(twitterValue, addTweet, 'text');
 
   // função que cria o elemento
   function createTwitterSection(profile) {
@@ -52,6 +56,9 @@ export default function createTweet() {
     const switchTwitter = document.querySelector('.switch-tweet');
     switchTwitter.classList.remove('uk-hidden');
     switchTwitter.classList.add('uk-flex');
+
+    // se já existir um email no localStorage, remove o atributo disabled do botão
+    addTweet.removeAttribute('disabled');
 
     // altera o texto do botão para 'atualizar' quando o valor do input for alterado
   twitterValue.addEventListener('keyup', function () {

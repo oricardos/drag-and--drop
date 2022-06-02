@@ -1,12 +1,16 @@
 import showSections from '../showSections/showSections.js';
 import createSectionEl from './createSectionEl.js';
 import changeButtonText from '../changeButtonText.js';
+import removeDisabled from '../removeDisabled.js';
 
 export default function createText() {
   // captura dos elementos
   const textValue = document.getElementById('beacons-bio');
   const addBio = document.querySelector('.add-bio');
   const bio = window.localStorage.getItem('bio');
+
+  // remove o atributo disabled do botão quando um valor for inserido
+  removeDisabled(textValue, addBio, 'text');
 
   // função que cria o elemento
   function createBioSection(text) {
@@ -22,8 +26,6 @@ export default function createText() {
 
     createSectionEl('section-text', section);
   }
-
-  
 
   // adiciona o texto no preview
   addBio.addEventListener('click', () => {
@@ -41,6 +43,9 @@ export default function createText() {
     const switchTexts = document.querySelector('.switch-texts');
     switchTexts.classList.remove('uk-hidden');
     switchTexts.classList.add('uk-flex');
+
+    // se já existir um texto no localStorage, remove o atributo disabled do botão
+    addBio.removeAttribute('disabled');
 
     // altera o texto do botão para 'atualizar' quando o valor do input for alterado
   textValue.addEventListener('keyup', function () {

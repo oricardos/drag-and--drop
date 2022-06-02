@@ -1,4 +1,5 @@
 import changeButtonText from '../changeButtonText.js';
+import removeDisabled from '../removeDisabled.js';
 import showSections from '../showSections/showSections.js';
 import createSectionEl from './createSectionEl.js';
 
@@ -9,6 +10,11 @@ export default function createLink() {
   const addLink = document.querySelector('.add-link');
 
   const localStorageLink = JSON.parse(localStorage.getItem('link')) || [];
+
+  // TODO FAZER VALIDAÇÃO SE OS 2 CAMPOS ESTÃO PREENCHIDOS (nameLink e linkHref)
+  // remove o atributo disabled do botão quando um valor for inserido
+  removeDisabled(nameLink, addLink, 'text');
+  removeDisabled(linkHref, addLink, 'link');
 
   // função que cria o elemento
   function createLinkSection(values) {
@@ -61,6 +67,7 @@ export default function createLink() {
     const switchTexts = document.querySelector('.switch-links');
     switchTexts.classList.remove('uk-hidden');
     switchTexts.classList.add('uk-flex');
+
     showSections('#switch-links', '.beacons-section-links');
 
     createLinkSection(localStorageLink);
