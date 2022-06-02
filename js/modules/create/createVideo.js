@@ -25,11 +25,6 @@ export default function createYouTube() {
     createSectionEl('section-video', row);
   }
 
-  // altera o texto do botão para 'atualizar' quando o valor do input for alterado
-  linkValue.addEventListener('keyup', function () {
-    changeButtonText(addLink);
-  });
-
   // adiciona o video no preview
   addLink.addEventListener('click', function () {
     if (linkValue.value !== '') {
@@ -46,6 +41,12 @@ export default function createYouTube() {
     const switchYouTube = document.querySelector('.switch-video');
     switchYouTube.classList.remove('uk-hidden');
     switchYouTube.classList.add('uk-block');
+
+    // altera o texto do botão para 'atualizar' quando o valor do input for alterado
+    linkValue.addEventListener('keyup', function () {
+      changeButtonText(addLink);
+    });
+
     showSections('#switch-video', '.beacons-section-video');
 
     linkValue.value = video;

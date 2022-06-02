@@ -43,10 +43,7 @@ export default function createEmail() {
     createSectionEl('section-email', beaconsSection);
   }
 
-  // altera o texto do botão para 'atualizar' quando o valor do input for alterado
-  mailto.addEventListener('keyup', function () {
-    changeButtonText(addEmail);
-  });
+  
 
   // adiciona o elemento no preview
   addEmail.addEventListener('click', function () {
@@ -64,6 +61,12 @@ export default function createEmail() {
     const switchEmail = document.querySelector('.switch-email');
     switchEmail.classList.remove('uk-hidden');
     switchEmail.classList.add('uk-flex');
+
+    // altera o texto do botão para 'atualizar' quando o valor do input for alterado
+  mailto.addEventListener('keyup', function () {
+    changeButtonText(addEmail);
+  });
+
     showSections('#switch-email', '.beacons-section-email');
 
     mailto.value = email;

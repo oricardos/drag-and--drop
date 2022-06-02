@@ -23,10 +23,7 @@ export default function createText() {
     createSectionEl('section-text', section);
   }
 
-  // altera o texto do botão para 'atualizar' quando o valor do input for alterado
-  textValue.addEventListener('keyup', function () {
-    changeButtonText(addBio);
-  });
+  
 
   // adiciona o texto no preview
   addBio.addEventListener('click', () => {
@@ -44,6 +41,12 @@ export default function createText() {
     const switchTexts = document.querySelector('.switch-texts');
     switchTexts.classList.remove('uk-hidden');
     switchTexts.classList.add('uk-flex');
+
+    // altera o texto do botão para 'atualizar' quando o valor do input for alterado
+  textValue.addEventListener('keyup', function () {
+    changeButtonText(addBio);
+  });
+
     showSections('#switch-texts', '.beacons-section-text');
 
     textValue.value = bio;

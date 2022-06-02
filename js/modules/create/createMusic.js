@@ -31,11 +31,6 @@ export default function createMusic() {
     createSectionEl('section-music', row);
   }
 
-  // altera o texto do botão para 'atualizar' quando o valor do input for alterado
-  iframeValue.addEventListener('keyup', function () {
-    changeButtonText(addMusic);
-  });
-
   // adiciona o iframe no preview
   addMusic.addEventListener('click', function () {
     if (iframeValue.value !== '') {
@@ -50,6 +45,12 @@ export default function createMusic() {
     const switchMusic = document.querySelector('.switch-music');
     switchMusic.classList.remove('uk-hidden');
     switchMusic.classList.add('uk-flex');
+
+    // altera o texto do botão para 'atualizar' quando o valor do input for alterado
+    iframeValue.addEventListener('keyup', function () {
+      changeButtonText(addMusic);
+    });
+
     showSections('#switch-music', '.beacons-section-music');
 
     iframeValue.value = iframe;

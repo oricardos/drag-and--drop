@@ -63,7 +63,7 @@ body {
     position: -webkit-sticky;
     position: sticky;
     width: 100%;
-    top: 100px;
+    top: 40px;
 }
 
 .container-grid {

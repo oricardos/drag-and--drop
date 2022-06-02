@@ -37,11 +37,6 @@ export default function createTweet() {
     createSectionEl('section-twitter', row);
   }
 
-  // altera o texto do botão para 'atualizar' quando o valor do input for alterado
-  twitterValue.addEventListener('keyup', function () {
-    changeButtonText(addTweet);
-  });
-
   // adiciona o elemento no preview
   addTweet.addEventListener('click', function (evt) {
     if (twitterValue.value !== '') {
@@ -57,6 +52,12 @@ export default function createTweet() {
     const switchTwitter = document.querySelector('.switch-tweet');
     switchTwitter.classList.remove('uk-hidden');
     switchTwitter.classList.add('uk-flex');
+
+    // altera o texto do botão para 'atualizar' quando o valor do input for alterado
+  twitterValue.addEventListener('keyup', function () {
+    changeButtonText(addTweet);
+  });
+
     showSections('#switch-tweet', '.beacons-section-twitter');
 
     twitterValue.value = twitter;
